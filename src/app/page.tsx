@@ -1,9 +1,10 @@
 import { Button } from '@nextui-org/react'
+import { CursorClick } from '@phosphor-icons/react/dist/ssr'
 
 
 
 export default function Home() {
   return (
-    <Button>Say: Hello, world!</Button>
+    <Button startContent={ <CursorClick/> }>Say: Hello, world!</Button>
   )
 }
