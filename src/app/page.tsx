@@ -1,5 +1,9 @@
+import { Button } from '@nextui-org/react'
+
+
+
 export default function Home() {
   return (
-    'Hello, world!'
+    <Button>Say: Hello, world!</Button>
   )
 }

@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { PropsWithChildren } from 'react'
+import { Providers } from '@/app/layout.providers'
+import clsx from 'clsx'
 
 
 
@@ -19,8 +21,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang='en'>
-      <body className={ inter.className }>
-        { children }
+      <body className={ clsx(inter.className, 'dark') }>
+        <Providers>
+          { children }
+        </Providers>
       </body>
     </html>
   )
