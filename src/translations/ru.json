@@ -1,0 +1,13 @@
+{
+  "features": {
+    "theme": {
+      "darkMode": "тёмная тема",
+      "lightMode": "светлая тема"
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "добро пожаловать"
+    }
+  }
+}

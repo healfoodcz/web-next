@@ -1,0 +1,13 @@
+{
+  "features": {
+    "theme": {
+      "darkMode": "dark mode",
+      "lightMode": "light mode"
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "welcome"
+    }
+  }
+}

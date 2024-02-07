@@ -1,0 +1,13 @@
+{
+  "features": {
+    "theme": {
+      "darkMode": "tmavý motiv",
+      "lightMode": "světlý motiv"
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "vítejte"
+    }
+  }
+}
