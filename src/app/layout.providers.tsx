@@ -13,7 +13,7 @@ import { ThemeProvider } from 'next-themes'
 export function Providers({ children }: PropsWithChildren) {
   return (
     <NextUIProvider>
-      <ThemeProvider attribute='class' defaultTheme='dark'>
+      <ThemeProvider attribute='class' defaultTheme='light'>
         <IconContext.Provider value={ iconsOptions }>
           { children }
         </IconContext.Provider>
