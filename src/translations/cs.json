@@ -1,8 +1,9 @@
 {
   "features": {
     "theme": {
-      "darkMode": "tmavý motiv",
-      "lightMode": "světlý motiv"
+      "darkTheme": "tmavý motiv",
+      "lightTheme": "světlý motiv",
+      "systemTheme": "systémový motiv"
     }
   },
   "pages": {

@@ -15,10 +15,9 @@ export default function ThemeSelector() {
 
   return (
     <>
-      <Button className='capitalize' startContent={ <MoonStars/> } onClick={ () => setTheme('dark') }>{ t('darkMode') }</Button>
-      <Button className='capitalize' startContent={ <Sun/> } onClick={ () => setTheme('light') }>{ t('lightMode') }</Button>
-
-      {/* TODO: system */ }
+      <Button className='capitalize' startContent={ <MoonStars/> } onClick={ () => setTheme('dark') }>{ t('darkTheme') }</Button>
+      <Button className='capitalize' startContent={ <Sun/> } onClick={ () => setTheme('light') }>{ t('lightTheme') }</Button>
+      <Button className='capitalize' startContent={ <Sun/> } onClick={ () => setTheme('system') }>{ t('systemTheme') }</Button>
     </>
   )
 }

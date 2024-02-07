@@ -1,8 +1,9 @@
 {
   "features": {
     "theme": {
-      "darkMode": "тёмная тема",
-      "lightMode": "светлая тема"
+      "darkTheme": "тёмная тема",
+      "lightTheme": "светлая тема",
+      "systemTheme": "системная тема"
     }
   },
   "pages": {

@@ -15,7 +15,7 @@ export function Providers({ children }: PropsWithChildren) {
 
   return (
     <NextUIProvider navigate={ router.push }>
-      <ThemeProvider attribute='class' defaultTheme='light' /* TODO: make default system */>
+      <ThemeProvider attribute='class' defaultTheme='system'>
         <IconContext.Provider value={ iconsOptions }>
           { children }
         </IconContext.Provider>
