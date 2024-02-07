@@ -1,12 +1,8 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
 import { PropsWithChildren } from 'react'
 import { Providers } from '@/app/layout.providers'
-
-
-
-const inter = Inter({ subsets: [ 'latin' ] })
+import { fontPrimary } from '@/lib'
 
 
 
@@ -20,7 +16,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className={ inter.className }>
+      <body className={ fontPrimary.className }>
         <Providers>
           { children }
         </Providers>
