@@ -1,0 +1,203 @@
+<component name="ProjectCodeStyleConfiguration">
+  <code_scheme name="Project" version="173">
+    <option name="AUTODETECT_INDENTS" value="false" />
+    <option name="RIGHT_MARGIN" value="110" />
+    <option name="DO_NOT_FORMAT">
+      <list>
+        <fileSet type="globPattern" pattern="templates/*" />
+      </list>
+    </option>
+    <HTMLCodeStyleSettings>
+      <option name="HTML_UNIFORM_INDENT" value="true" />
+      <option name="HTML_ATTRIBUTE_WRAP" value="4" />
+      <option name="HTML_KEEP_BLANK_LINES" value="1" />
+      <option name="HTML_SPACE_INSIDE_EMPTY_TAG" value="true" />
+      <option name="HTML_ELEMENTS_TO_REMOVE_NEW_LINE_BEFORE" value="" />
+      <option name="HTML_DO_NOT_INDENT_CHILDREN_OF" value="" />
+      <option name="HTML_QUOTE_STYLE" value="Single" />
+      <option name="HTML_ENFORCE_QUOTES" value="true" />
+      <option name="HTML_NEWLINE_BEFORE_FIRST_ATTRIBUTE" value="When multiline" />
+      <option name="HTML_NEWLINE_AFTER_LAST_ATTRIBUTE" value="When multiline" />
+    </HTMLCodeStyleSettings>
+    <JSCodeStyleSettings version="0">
+      <option name="USE_SEMICOLON_AFTER_STATEMENT" value="false" />
+      <option name="FORCE_SEMICOLON_STYLE" value="true" />
+      <option name="ALIGN_VAR_STATEMENTS" value="1" />
+      <option name="SPACE_WITHIN_ARRAY_INITIALIZER_BRACKETS" value="true" />
+      <option name="SPACE_BEFORE_FUNCTION_LEFT_PARENTH" value="false" />
+      <option name="USE_DOUBLE_QUOTES" value="false" />
+      <option name="FORCE_QUOTE_STYlE" value="true" />
+      <option name="ENFORCE_TRAILING_COMMA" value="WhenMultiline" />
+      <option name="JSX_ATTRIBUTE_VALUE" value="Quotes" />
+      <option name="USE_EXPLICIT_JS_EXTENSION" value="TRUE" />
+      <option name="IMPORTS_WRAP" value="0" />
+      <option name="SPACES_WITHIN_OBJECT_LITERAL_BRACES" value="true" />
+      <option name="SPACES_WITHIN_IMPORTS" value="true" />
+      <option name="USE_CHAINED_CALLS_GROUP_INDENTS" value="true" />
+      <option name="SPACES_WITHIN_INTERPOLATION_EXPRESSIONS" value="true" />
+      <option name="IMPORT_SORT_MEMBERS" value="false" />
+    </JSCodeStyleSettings>
+    <PHPCodeStyleSettings>
+      <option name="LOWER_CASE_BOOLEAN_CONST" value="true" />
+      <option name="LOWER_CASE_NULL_CONST" value="true" />
+      <option name="ELSE_IF_STYLE" value="SEPARATE" />
+      <option name="VARIABLE_NAMING_STYLE" value="CAMEL_CASE" />
+      <option name="BLANK_LINES_BEFORE_RETURN_STATEMENT" value="1" />
+      <option name="BLANK_LINES_AFTER_OPENING_TAG" value="3" />
+      <option name="BLANK_LINES_AFTER_FUNCTION" value="3" />
+      <option name="KEEP_BLANK_LINES_AFTER_LBRACE" value="0" />
+      <option name="SPACE_BEFORE_CLOSURE_LEFT_PARENTHESIS" value="false" />
+      <option name="FORCE_SHORT_DECLARATION_ARRAY_STYLE" value="true" />
+      <option name="SPACE_AROUND_ASSIGNMENT_IN_DECLARE" value="true" />
+      <option name="FORCE_EMPTY_METHODS_IN_ONE_LINE" value="true" />
+    </PHPCodeStyleSettings>
+    <ScssCodeStyleSettings>
+      <option name="HEX_COLOR_UPPER_CASE" value="true" />
+      <option name="HEX_COLOR_LONG_FORMAT" value="true" />
+      <option name="BLANK_LINES_BETWEEN_BLOCKS" value="3" />
+      <option name="USE_DOUBLE_QUOTES" value="false" />
+      <option name="ENFORCE_QUOTES_ON_FORMAT" value="true" />
+    </ScssCodeStyleSettings>
+    <TypeScriptCodeStyleSettings version="0">
+      <option name="USE_SEMICOLON_AFTER_STATEMENT" value="false" />
+      <option name="FORCE_SEMICOLON_STYLE" value="true" />
+      <option name="ALIGN_VAR_STATEMENTS" value="1" />
+      <option name="SPACE_WITHIN_ARRAY_INITIALIZER_BRACKETS" value="true" />
+      <option name="SPACE_BEFORE_FUNCTION_LEFT_PARENTH" value="false" />
+      <option name="PREFER_AS_TYPE_CAST" value="true" />
+      <option name="USE_DOUBLE_QUOTES" value="false" />
+      <option name="FORCE_QUOTE_STYlE" value="true" />
+      <option name="ENFORCE_TRAILING_COMMA" value="WhenMultiline" />
+      <option name="SPACES_WITHIN_OBJECT_LITERAL_BRACES" value="true" />
+      <option name="SPACES_WITHIN_IMPORTS" value="true" />
+      <option name="USE_CHAINED_CALLS_GROUP_INDENTS" value="true" />
+      <option name="SPACES_WITHIN_INTERPOLATION_EXPRESSIONS" value="true" />
+      <option name="IMPORT_SORT_MEMBERS" value="false" />
+    </TypeScriptCodeStyleSettings>
+    <VueCodeStyleSettings>
+      <option name="INTERPOLATION_NEW_LINE_AFTER_START_DELIMITER" value="false" />
+      <option name="INTERPOLATION_NEW_LINE_BEFORE_END_DELIMITER" value="false" />
+    </VueCodeStyleSettings>
+    <editorconfig>
+      <option name="ENABLED" value="false" />
+    </editorconfig>
+    <codeStyleSettings language="CSS">
+      <option name="KEEP_BLANK_LINES_IN_CODE" value="3" />
+      <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="GraphQL">
+      <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="HTML">
+      <option name="LINE_COMMENT_AT_FIRST_COLUMN" value="false" />
+      <option name="BLOCK_COMMENT_AT_FIRST_COLUMN" value="false" />
+      <option name="SOFT_MARGINS" value="80" />
+      <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="JavaScript">
+      <option name="BLOCK_COMMENT_AT_FIRST_COLUMN" value="false" />
+      <option name="KEEP_FIRST_COLUMN_COMMENT" value="false" />
+      <option name="KEEP_BLANK_LINES_IN_CODE" value="3" />
+      <option name="BLANK_LINES_AFTER_IMPORTS" value="3" />
+      <option name="BLANK_LINES_AROUND_CLASS" value="3" />
+      <option name="BLANK_LINES_AROUND_FIELD" value="1" />
+      <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
+      <option name="ALIGN_MULTILINE_ARRAY_INITIALIZER_EXPRESSION" value="true" />
+      <option name="ARRAY_INITIALIZER_WRAP" value="5" />
+      <option name="ARRAY_INITIALIZER_LBRACE_ON_NEXT_LINE" value="true" />
+      <option name="ARRAY_INITIALIZER_RBRACE_ON_NEXT_LINE" value="true" />
+      <option name="SOFT_MARGINS" value="80" />
+      <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="LESS">
+      <option name="LINE_COMMENT_ADD_SPACE" value="true" />
+    </codeStyleSettings>
+    <codeStyleSettings language="PHP">
+      <option name="LINE_COMMENT_AT_FIRST_COLUMN" value="false" />
+      <option name="KEEP_FIRST_COLUMN_COMMENT" value="false" />
+      <option name="KEEP_CONTROL_STATEMENT_IN_ONE_LINE" value="false" />
+      <option name="KEEP_BLANK_LINES_IN_DECLARATIONS" value="3" />
+      <option name="KEEP_BLANK_LINES_IN_CODE" value="3" />
+      <option name="KEEP_BLANK_LINES_BEFORE_RBRACE" value="0" />
+      <option name="BLANK_LINES_BEFORE_PACKAGE" value="3" />
+      <option name="BLANK_LINES_AFTER_PACKAGE" value="1" />
+      <option name="BLANK_LINES_AFTER_IMPORTS" value="3" />
+      <option name="BLANK_LINES_AROUND_CLASS" value="3" />
+      <option name="CLASS_BRACE_STYLE" value="1" />
+      <option name="METHOD_BRACE_STYLE" value="1" />
+      <option name="SPECIAL_ELSE_IF_TREATMENT" value="true" />
+      <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
+      <option name="ALIGN_MULTILINE_ARRAY_INITIALIZER_EXPRESSION" value="true" />
+      <option name="SPACE_WITHIN_ARRAY_INITIALIZER_BRACES" value="true" />
+      <option name="SPACE_AFTER_TYPE_CAST" value="true" />
+      <option name="KEEP_SIMPLE_CLASSES_IN_ONE_LINE" value="true" />
+      <option name="ARRAY_INITIALIZER_WRAP" value="5" />
+      <option name="ARRAY_INITIALIZER_LBRACE_ON_NEXT_LINE" value="true" />
+      <option name="ARRAY_INITIALIZER_RBRACE_ON_NEXT_LINE" value="true" />
+      <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="SASS">
+      <option name="LINE_COMMENT_ADD_SPACE" value="true" />
+    </codeStyleSettings>
+    <codeStyleSettings language="SCSS">
+      <option name="LINE_COMMENT_ADD_SPACE" value="true" />
+      <option name="KEEP_BLANK_LINES_IN_CODE" value="3" />
+      <indentOptions>
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="Shell Script">
+      <indentOptions>
+        <option name="INDENT_SIZE" value="4" />
+        <option name="TAB_SIZE" value="4" />
+        <option name="USE_TAB_CHARACTER" value="true" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="TypeScript">
+      <option name="KEEP_FIRST_COLUMN_COMMENT" value="false" />
+      <option name="KEEP_BLANK_LINES_IN_CODE" value="3" />
+      <option name="BLANK_LINES_AFTER_IMPORTS" value="3" />
+      <option name="BLANK_LINES_AROUND_FIELD" value="1" />
+      <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
+      <option name="ALIGN_MULTILINE_ARRAY_INITIALIZER_EXPRESSION" value="true" />
+      <option name="ARRAY_INITIALIZER_WRAP" value="5" />
+      <option name="ARRAY_INITIALIZER_LBRACE_ON_NEXT_LINE" value="true" />
+      <option name="ARRAY_INITIALIZER_RBRACE_ON_NEXT_LINE" value="true" />
+      <option name="SOFT_MARGINS" value="80" />
+      <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="Vue">
+      <option name="SOFT_MARGINS" value="80" />
+      <indentOptions>
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="XML">
+      <option name="LINE_COMMENT_AT_FIRST_COLUMN" value="false" />
+      <option name="BLOCK_COMMENT_AT_FIRST_COLUMN" value="false" />
+    </codeStyleSettings>
+  </code_scheme>
+</component>

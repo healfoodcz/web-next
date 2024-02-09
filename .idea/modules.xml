@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../ramofx.dev/mojeklima/ui-next/.idea/mojeklima.ui.next.iml" filepath="$PROJECT_DIR$/../../../ramofx.dev/mojeklima/ui-next/.idea/mojeklima.ui.next.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/nextjs2.iml" filepath="$PROJECT_DIR$/.idea/nextjs2.iml" />
     </modules>
   </component>
