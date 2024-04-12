@@ -1,10 +1,31 @@
 import createNextIntlPlugin from 'next-intl/plugin'
 
-const withNextIntl = createNextIntlPlugin('./src/lib/i18n.ts')
+const withNextIntl = createNextIntlPlugin('./src/features/Translations/lib.ts')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = withNextIntl({
   poweredByHeader: false,
+  reactStrictMode: false,
+  optimizeFonts: true,
+  webpack(config, { isServer }) {
+    const prefix = config.assetPrefix ?? config.basePath ?? ''
+
+    config.module.rules.push({
+      test: /\.mp4$/,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            publicPath: `${prefix}/_next/static/media/`,
+            outputPath: `${isServer ? '../' : ''}static/media/`,
+            name: '[name].[hash].[ext]',
+          },
+        },
+      ],
+    })
+
+    return config
+  },
 })
 
 export default nextConfig

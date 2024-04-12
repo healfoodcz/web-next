@@ -19,6 +19,13 @@
     "prettier/prettier": "error",
     "import/prefer-default-export": "off",
     "import/extensions": "off",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "no-restricted-exports": "off",
+    "max-len": ["error", { "code": 110 }],
+    "no-console": "off",
+    "import/no-cycle": "off",
+    "class-methods-use-this": "off",
+    "no-useless-constructor": "off",
+    "no-unused-vars": "off"
   }
 }
