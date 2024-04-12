@@ -1,31 +1,25 @@
 import '../globals.css'
-import { fontPrimary, locale, Params, i18n } from '@/lib'
+import { translations, LocaleParams } from '@/features/Translations'
 import { PropsWithChildren } from 'react'
-import { unstable_setRequestLocale } from 'next-intl/server'
-import { useMessages, NextIntlClientProvider } from 'next-intl'
+import { unstable_setRequestLocale as setRequestLocale } from 'next-intl/server'
+import { NextIntlClientProvider, useMessages } from 'next-intl'
 import { Providers } from './layout.providers'
-
-
+import WebVitals from './layout.web-vitals'
 
 export function generateStaticParams() {
-  return i18n.locales.map((locale) => ({ locale }))
+  return translations.locales.map((locale) => ({ locale }))
 }
 
-
-
-export default function RootLayout({ children, params: { locale } }: PropsWithChildren<Params<{ locale: locale }>>) {
-  unstable_setRequestLocale(locale)
-  const translations = useMessages()
+export default function Layout({ children, params }: PropsWithChildren<LocaleParams>) {
+  setRequestLocale(params.locale)
+  const allTranslations = useMessages()
 
   return (
-    <html lang={ locale } suppressHydrationWarning>
-      <body className={ fontPrimary.className }>
-        <NextIntlClientProvider locale={ locale } messages={ translations }>
-          <Providers>
-            { children }
-          </Providers>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <div lang={params.locale}>
+      <WebVitals />
+      <NextIntlClientProvider locale={params.locale} messages={allTranslations}>
+        <Providers params={params}>{children}</Providers>
+      </NextIntlClientProvider>
+    </div>
   )
 }
