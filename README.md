@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# healfood.cz
 
-## Getting Started
+A web application written for HEALFOOD CZ s.r.o. company.
 
-First, run the development server:
+> Here should be image previews of the web application
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Software prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Docker
+- Node.js
+- NPM
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Start
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- If using Docker, then `./cli/up-prod`
 
-## Learn More
+otherwise
 
-To learn more about Next.js, take a look at the following resources:
+- `npm install`
+- `npm run start:prod`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Develop
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- If using Docker, then `./cli/up-dev`
 
-## Deploy on Vercel
+otherwise
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `npm install`
+- `npm run start:dev`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## TODO.dev
+
+- [x] Fix annoying disability to scroll after page load
+- [ ] Add home page
+- [x] Add catalog page
+- [ ] Add contact page
+- [ ] Add legal pages
+- [ ] First release
+- [ ] External links catcher
+- [ ] Add animations
+- [ ] Add CMS
+- [ ] Explore modification config to minimize rewriting of common styles (https://nextui.org/docs/customization/custom-variants)
