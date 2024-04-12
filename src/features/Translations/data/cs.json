@@ -1,0 +1,110 @@
+{
+  "features": {
+    "alphabeticalSort": {
+      "aZ": "A-Ž",
+      "zA": "Ž-A"
+    },
+    "bookmark": {
+      "add": "Přidat do záložek",
+      "remove": "Odebrat ze záložek"
+    },
+    "carousel": {
+      "next": "Další",
+      "previous": "Předchozí"
+    },
+    "categoryCard": {
+      "products": "{count, plural, =0 {Žádné zboží} other {# zboží}}"
+    },
+    "filter": {
+      "categories": "Kategorie"
+    },
+    "getQuote": {
+      "label": "Získat cenovou nabídku"
+    },
+    "language": {
+      "czech": "Český",
+      "english": "Anglický",
+      "german": "Německý",
+      "label": "Jazyk",
+      "russian": "Ruský",
+      "select": "Zvolte jazyk"
+    },
+    "menu": {
+      "close": "Zavřít menu",
+      "done": "Hotovo",
+      "open": "Otevřít menu"
+    },
+    "navigation": {
+      "juridical": "Právní",
+      "pages": "Stránky"
+    },
+    "product": {
+      "description": "Popis",
+      "noDescription": "Nebyl poskytnut žádný popis",
+      "price": "Cena",
+      "priceOnRequest": "Cena na vyžádání",
+      "visited": "Navštívené"
+    },
+    "search": {
+      "label": "Hledat",
+      "nothingFound": "Pro požadavek <b>\"{search}\"<b> nebylo nic nalezeno"
+    },
+    "sort": {
+      "label": "Seřadit"
+    },
+    "theme": {
+      "darkTheme": "Tmavý motiv",
+      "darkThemeDescription": "Světlý text na tmavém pozadí",
+      "label": "Motiv",
+      "lightTheme": "Světlý motiv",
+      "lightThemeDescription": "Tmavý text na světlém pozadí",
+      "select": "Jaký motiv vám nejvíce vyhovuje?",
+      "systemTheme": "Systémový motiv",
+      "systemThemeDescription": "Použít nastavení zařízení"
+    }
+  },
+  "pages": {
+    "juridical": {
+      "disclaimer": {
+        "titleAndLink": "Odmítnutí odpovědnosti"
+      },
+      "gdpr": {
+        "titleAndLink": "GDPR"
+      },
+      "privacyPolicy": {
+        "titleAndLink": "Zásady ochrany osobních údajů"
+      },
+      "termsAndConditions": {
+        "titleAndLink": "Podmínky a pravidla"
+      }
+    },
+    "main": {
+      "bookmarks": {
+        "titleAndLink": "Záložky"
+      },
+      "catalog": {
+        "link": "Katalog",
+        "title": "Procházet zboží"
+      },
+      "contact": {
+        "link": "Kontakt",
+        "title": "Kontaktujte nás"
+      },
+      "home": {
+        "link": "Domů",
+        "title": "Vítejte"
+      }
+    },
+    "special": {
+      "error": {
+        "description": "Omlouváme se, ale zdá se, že při zpracování vašeho požadavku došlo k problému",
+        "title": "Něco se pokazilo",
+        "tryAgain": "Zkusit znovu"
+      },
+      "notFound": {
+        "description": "Omlouváme se, ale nepodařilo se nám najít nic odpovídajícího vašemu dotazu",
+        "title": "Stránka nenalezena"
+      }
+    }
+  }
+}

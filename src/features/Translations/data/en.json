@@ -1,0 +1,110 @@
+{
+  "features": {
+    "alphabeticalSort": {
+      "aZ": "A-Z",
+      "zA": "Z-A"
+    },
+    "bookmark": {
+      "add": "Add to bookmarks",
+      "remove": "Remove from bookmarks"
+    },
+    "carousel": {
+      "next": "Next",
+      "previous": "Previous"
+    },
+    "categoryCard": {
+      "products": "{count, plural, =0 {No products} =1 {# product} other {# products}}"
+    },
+    "filter": {
+      "categories": "Categories"
+    },
+    "getQuote": {
+      "label": "Get quote"
+    },
+    "language": {
+      "czech": "Czech",
+      "english": "English",
+      "german": "German",
+      "label": "Language",
+      "russian": "Russian",
+      "select": "Select language"
+    },
+    "menu": {
+      "close": "Close menu",
+      "done": "Done",
+      "open": "Open menu"
+    },
+    "navigation": {
+      "juridical": "Juridical",
+      "pages": "Pages"
+    },
+    "product": {
+      "description": "Description",
+      "noDescription": "No description provided",
+      "price": "Price",
+      "priceOnRequest": "Price on request",
+      "visited": "Visited"
+    },
+    "search": {
+      "label": "Search",
+      "nothingFound": "Nothing was found for the request <b>\"{search}\"<b>"
+    },
+    "sort": {
+      "label": "Sort"
+    },
+    "theme": {
+      "darkTheme": "Dark theme",
+      "darkThemeDescription": "Light text on a dark background",
+      "label": "Theme",
+      "lightTheme": "Light theme",
+      "lightThemeDescription": "Dark text on a light background",
+      "select": "Which theme suits you best?",
+      "systemTheme": "System theme",
+      "systemThemeDescription": "Use device settings"
+    }
+  },
+  "pages": {
+    "juridical": {
+      "disclaimer": {
+        "titleAndLink": "Disclaimer"
+      },
+      "gdpr": {
+        "titleAndLink": "GDPR"
+      },
+      "privacyPolicy": {
+        "titleAndLink": "Privacy policy"
+      },
+      "termsAndConditions": {
+        "titleAndLink": "Terms and Conditions"
+      }
+    },
+    "main": {
+      "bookmarks": {
+        "titleAndLink": "Bookmarks"
+      },
+      "catalog": {
+        "link": "Catalog",
+        "title": "Browse goods"
+      },
+      "contact": {
+        "link": "Contact",
+        "title": "Get in touch"
+      },
+      "home": {
+        "link": "Home",
+        "title": "Welcome"
+      }
+    },
+    "special": {
+      "error": {
+        "description": "We're sorry, but it seems like there was an issue processing your request",
+        "title": "Something went wrong",
+        "tryAgain": "Try again"
+      },
+      "notFound": {
+        "description": "Sorry, we couldn't find anything matching your request",
+        "title": "Page not found"
+      }
+    }
+  }
+}

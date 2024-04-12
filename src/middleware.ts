@@ -1,11 +1,21 @@
 import createMiddleware from 'next-intl/middleware'
-import { i18n } from '@/lib'
+import { translations } from '@/features/Translations'
 
 export default createMiddleware({
-  locales: i18n.locales,
-  defaultLocale: i18n.defaultLocale,
+  locales: translations.locales,
+  defaultLocale: translations.defaultLocale,
 })
 
 export const config = {
-  matcher: ['/', '/(en|ru|de|cs)/:path*'],
+  matcher: [
+    /*
+     * https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher
+     * Match all request paths except for the ones starting with:
+     * - api (API routes)
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     */
+    '/((?!api|_next/static|_next/image|favicon.ico).*)',
+  ],
 }

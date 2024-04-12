@@ -1,0 +1,110 @@
+{
+  "features": {
+    "alphabeticalSort": {
+      "aZ": "A-Z",
+      "zA": "Z-A"
+    },
+    "bookmark": {
+      "add": "Zu Lesezeichen hinzufügen",
+      "remove": "Aus Lesezeichen entfernen"
+    },
+    "carousel": {
+      "next": "Nächste",
+      "previous": "Vorherige"
+    },
+    "categoryCard": {
+      "products": "{count, plural, =0 {Keine Produkte} =1 {# Produkt} other {# Produkte}}"
+    },
+    "filter": {
+      "categories": "Kategorien"
+    },
+    "getQuote": {
+      "label": "Erhalten Sie Zitat"
+    },
+    "language": {
+      "czech": "Tschechisch",
+      "english": "Englisch",
+      "german": "Deutsch",
+      "label": "Sprache",
+      "russian": "Russisch",
+      "select": "Sprache auswählen"
+    },
+    "menu": {
+      "close": "Menü schließen",
+      "done": "Fertig",
+      "open": "Menü öffnen"
+    },
+    "navigation": {
+      "juridical": "Juristische",
+      "pages": "Seiten"
+    },
+    "product": {
+      "description": "Beschreibung",
+      "noDescription": "Keine Beschreibung angegeben",
+      "price": "Preis",
+      "priceOnRequest": "Preis auf Anfrage",
+      "visited": "Besucht"
+    },
+    "search": {
+      "label": "Suchen",
+      "nothingFound": "Für die Anfrage <b>\"{search}\"<b> wurde nichts gefunden"
+    },
+    "sort": {
+      "label": "Sortieren"
+    },
+    "theme": {
+      "darkTheme": "Dunkles Thema",
+      "darkThemeDescription": "Heller Text auf dunklem Hintergrund",
+      "label": "Thema",
+      "lightTheme": "Lichtthema",
+      "lightThemeDescription": "Dunkler Text auf hellem Hintergrund",
+      "select": "Welches Thema passt am besten zu Ihnen?",
+      "systemTheme": "Systemthema",
+      "systemThemeDescription": "Geräteeinstellungen verwenden"
+    }
+  },
+  "pages": {
+    "juridical": {
+      "disclaimer": {
+        "titleAndLink": "Haftungsausschluss"
+      },
+      "gdpr": {
+        "titleAndLink": "DSGVO"
+      },
+      "privacyPolicy": {
+        "titleAndLink": "Datenschutzbestimmungen"
+      },
+      "termsAndConditions": {
+        "titleAndLink": "Allgemeine Geschäftsbedingungen"
+      }
+    },
+    "main": {
+      "bookmarks": {
+        "titleAndLink": "Lesezeichen"
+      },
+      "catalog": {
+        "link": "Katalog",
+        "title": "Produkte durchsuchen"
+      },
+      "contact": {
+        "link": "Kontakt",
+        "title": "Melden Sie sich"
+      },
+      "home": {
+        "link": "Heim",
+        "title": "Willkommen"
+      }
+    },
+    "special": {
+      "error": {
+        "description": "Es tut uns leid, aber es scheint ein Problem bei der Verarbeitung Ihrer Anfrage aufgetreten zu sein",
+        "title": "Etwas ist schief gelaufen",
+        "tryAgain": "Versuchen Sie es erneut"
+      },
+      "notFound": {
+        "description": "Entschuldigung, wir konnten nichts finden, das Ihrem Suchbegriff entspricht",
+        "title": "Seite nicht gefunden"
+      }
+    }
+  }
+}

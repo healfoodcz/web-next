@@ -1,6 +1,0 @@
-export * from '@/lib/icons'
-export * from '@/lib/fonts'
-export * from '@/lib/metadata'
-export * from '@/lib/i18n'
-export * from '@/lib/next'
-export * from '@/lib/string'
