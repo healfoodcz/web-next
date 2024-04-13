@@ -10,7 +10,6 @@ import {
   Breadcrumbs,
   BreadcrumbItem,
   ScrollShadow,
-  Tooltip,
   Modal,
   ModalHeader,
   ModalBody,
@@ -233,26 +232,19 @@ export default function PageContent({ params }: LocaleParams & ProductParams) {
                   <h1 className="text-2xl font-bold">{title}</h1>
 
                   {isMounted && (
-                    <Tooltip
-                      content={isBookmarked ? t('features.bookmark.remove') : t('features.bookmark.add')}
+                    <Button
                       color="default"
-                      placement="left"
-                    >
-                      <Button
-                        isIconOnly
-                        variant="light"
-                        radius="full"
-                        color="default"
-                        onClick={handleToggleIsBookmarked}
-                      >
+                      variant="flat"
+                      onClick={handleToggleIsBookmarked}
+                      endContent={
                         <Bookmark
-                          aria-label={
-                            isBookmarked ? t('features.bookmark.remove') : t('features.bookmark.add')
-                          }
+                          aria-label={isBookmarked ? 'Forget' : 'Save'}
                           weight={isBookmarked ? 'fill' : 'regular'}
                         />
-                      </Button>
-                    </Tooltip>
+                      }
+                    >
+                      {isBookmarked ? t('features.bookmark.forget') : t('features.bookmark.save')}
+                    </Button>
                   )}
                 </div>
 

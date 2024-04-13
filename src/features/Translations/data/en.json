@@ -5,8 +5,8 @@
       "zA": "Z-A"
     },
     "bookmark": {
-      "add": "Add to bookmarks",
-      "remove": "Remove from bookmarks"
+      "forget": "Forget",
+      "save": "Save"
     },
     "carousel": {
       "next": "Next",

@@ -5,8 +5,8 @@
       "zA": "Ž-A"
     },
     "bookmark": {
-      "add": "Přidat do záložek",
-      "remove": "Odebrat ze záložek"
+      "forget": "Zapomenout",
+      "save": "Uložit"
     },
     "carousel": {
       "next": "Další",

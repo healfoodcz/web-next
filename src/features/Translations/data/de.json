@@ -5,8 +5,8 @@
       "zA": "Z-A"
     },
     "bookmark": {
-      "add": "Zu Lesezeichen hinzufügen",
-      "remove": "Aus Lesezeichen entfernen"
+      "forget": "Vergessen",
+      "save": "Speichern"
     },
     "carousel": {
       "next": "Nächste",
