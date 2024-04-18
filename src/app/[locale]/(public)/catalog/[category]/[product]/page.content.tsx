@@ -28,9 +28,11 @@ import { getCategoryById } from '@/features/Category'
 import React, { useMemo, useState, useEffect } from 'react'
 import { Bookmark, Tag } from '@phosphor-icons/react'
 import clsx from 'clsx'
-import { capitalize } from '@/features/Common/lib'
+import { capitalize } from '@/features/Common'
 import { Thumbnail } from '@/features/Media'
 import { useAppDispatch, useAppSelector } from '@/features/Store'
+import { useDisclosure } from '@nextui-org/use-disclosure'
+import { ContactForm } from '@/features/Contact'
 import { ProductParams } from './page'
 
 // TODO: make a request form - show modal with items and centered section that asks whether user wants to
@@ -159,6 +161,9 @@ export default function PageContent({ params }: LocaleParams & ProductParams) {
     }
   }
 
+  // get quote
+  const getQuoteModal = useDisclosure()
+
   // visited
   const visited = useAppSelector((state) => {
     if (!(params.category in state.visited)) {
@@ -250,15 +255,15 @@ export default function PageContent({ params }: LocaleParams & ProductParams) {
 
                 <div className="flex flex-col gap-1">
                   <b>{t('features.product.description')}</b>
-                  <p className="opacity-75">{description ?? t('features.product.noDescription')}</p>
+                  <p className="opacity-70">{description ?? t('features.product.noDescription')}</p>
                 </div>
 
                 <div className="flex flex-col gap-1">
                   <b>{t('features.product.price')}</b>
-                  <p className="opacity-75">{t('features.product.priceOnRequest')}</p>
+                  <p className="opacity-70">{t('features.product.priceOnRequest')}</p>
                 </div>
 
-                <Button color="primary" variant="solid" startContent={<Tag />}>
+                <Button color="primary" variant="solid" startContent={<Tag />} onClick={getQuoteModal.onOpen}>
                   {t('features.getQuote.label')}
                 </Button>
               </CardBody>
@@ -311,6 +316,25 @@ export default function PageContent({ params }: LocaleParams & ProductParams) {
                   {t('features.menu.done')}
                 </Button>
               </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
+
+      <Modal
+        isOpen={getQuoteModal.isOpen}
+        onOpenChange={getQuoteModal.onOpenChange}
+        hideCloseButton
+        scrollBehavior="inside"
+      >
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader>{t('features.getQuote.label')}</ModalHeader>
+
+              <ModalBody>
+                <ContactForm handleClose={onClose} product={product} />
+              </ModalBody>
             </>
           )}
         </ModalContent>

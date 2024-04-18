@@ -10,7 +10,7 @@ export default function Page() {
     <Section className="grow min-h-[75vh] justify-center items-center text-center">
       <h1 className="text-xl">{t('special.notFound.title')}</h1>
 
-      <p className="opacity-60">{t('special.notFound.description')}</p>
+      <p className="opacity-70">{t('special.notFound.description')}</p>
 
       <Link href="/" color="primary">
         <Button color="primary">{t('main.home.link')}</Button>

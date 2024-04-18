@@ -15,6 +15,27 @@
     "categoryCard": {
       "products": "{count, plural, =0 {Žádné zboží} other {# zboží}}"
     },
+    "contact": {
+      "communicateVia": "Můžeme komunikovat prostřednictvím aplikace {application}?",
+      "companyName": "Název společnosti",
+      "email": "E-mailová adresa",
+      "fullName": "Celé jméno",
+      "individual": "Fyzická osoba",
+      "legalEntity": "Právnická osoba",
+      "message": "Zpráva",
+      "nameDescription": "Osobní jméno nebo název společnosti",
+      "phone": "Telefonní číslo",
+      "phoneDescription": "Zadejte telefonní číslo s předvolbou, např. +420",
+      "save": "Uložit informace na tomto počítači pro budoucí požadavky",
+      "send": "Poslat"
+    },
+    "error": {
+      "fieldEmpty": "Pole nemůže být prázdné",
+      "fieldTooLong": "Text je příliš dlouhý",
+      "fieldWrongFormat": "Nesprávný formát",
+      "somethingWentWrong": "Něco se pokazilo, zkuste to prosím znovu později",
+      "unknown": "Neznámá chyba"
+    },
     "filter": {
       "categories": "Kategorie"
     },
@@ -30,6 +51,7 @@
       "select": "Zvolte jazyk"
     },
     "menu": {
+      "cancel": "Zrušit",
       "close": "Zavřít menu",
       "done": "Hotovo",
       "open": "Otevřít menu"
@@ -47,7 +69,7 @@
     },
     "search": {
       "label": "Hledat",
-      "nothingFound": "Pro požadavek <b>\"{search}\"<b> nebylo nic nalezeno"
+      "nothingFound": "Pro požadavek <b>\"{search}\"</b> nebylo nic nalezeno"
     },
     "sort": {
       "label": "Seřadit"

@@ -123,7 +123,7 @@ export default function PageContent({ params }: LocaleParams & CategoryParams) {
           </div>
 
           {products?.length === 0 ? (
-            <p className="w-full text-center opacity-75">
+            <p className="w-full text-center opacity-70">
               {t.rich('features.search.nothingFound', { search, b: (chunks: any) => <b>{chunks}</b> })}
             </p>
           ) : (

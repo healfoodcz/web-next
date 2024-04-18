@@ -3,7 +3,6 @@
   <component name="ProjectSettingsService">
     <option name="localesDirectory" value="$PROJECT_DIR$/src/features/Translations/data" />
     <option name="defaultNamespace" value="" />
-    <option name="assistance" value="false" />
     <option name="alwaysFold" value="true" />
   </component>
 </project>

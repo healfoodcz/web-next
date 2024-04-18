@@ -22,7 +22,7 @@ export default function Error({ error, reset }: ErrorProps) {
     <Section className="min-h-[75vh] grow justify-center items-center text-center">
       <h1 className="text-xl">{t('title')}</h1>
 
-      <p className="opacity-60">{t('description')}</p>
+      <p className="opacity-70">{t('description')}</p>
 
       <Button color="primary" onClick={reset}>
         {t('tryAgain')}

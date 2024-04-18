@@ -15,6 +15,27 @@
     "categoryCard": {
       "products": "{count, plural, =0 {No products} =1 {# product} other {# products}}"
     },
+    "contact": {
+      "communicateVia": "Can we communicate via {application}?",
+      "companyName": "Company Name",
+      "email": "Email address",
+      "fullName": "Full name",
+      "individual": "Individual",
+      "legalEntity": "Legal Entity",
+      "message": "Message",
+      "nameDescription": "Personal name or company name",
+      "phone": "Phone number",
+      "phoneDescription": "Enter phone number with country code, e.g. +420",
+      "save": "Save information on this computer for future inquiries",
+      "send": "Send"
+    },
+    "error": {
+      "fieldEmpty": "Field cannot be empty",
+      "fieldTooLong": "The text is too long",
+      "fieldWrongFormat": "Invalid format",
+      "somethingWentWrong": "Something went wrong, please try again later",
+      "unknown": "Unknown error"
+    },
     "filter": {
       "categories": "Categories"
     },
@@ -30,6 +51,7 @@
       "select": "Select language"
     },
     "menu": {
+      "cancel": "Cancel",
       "close": "Close menu",
       "done": "Done",
       "open": "Open menu"
@@ -47,7 +69,7 @@
     },
     "search": {
       "label": "Search",
-      "nothingFound": "Nothing was found for the request <b>\"{search}\"<b>"
+      "nothingFound": "Nothing was found for the request <b>\"{search}\"</b>"
     },
     "sort": {
       "label": "Sort"

@@ -4,16 +4,18 @@ import { FLUSH, PAUSE, REGISTER, REHYDRATE, persistReducer, persistStore } from 
 import storage from 'redux-persist/lib/storage'
 import { PERSIST, PURGE } from 'redux-persist/es/constants'
 import { bookmarks, visited } from '@/features/Product'
+import { contact } from '@/features/Contact'
 
 const reducers = combineReducers({
   bookmarks,
   visited,
+  contact,
 })
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['bookmarks', 'visited'],
+  whitelist: ['bookmarks', 'visited', 'contact'],
 }
 
 const persistedReducers = persistReducer(persistConfig, reducers)
