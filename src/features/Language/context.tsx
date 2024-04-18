@@ -38,7 +38,12 @@ export function LanguageModalProvider({ locale, children }: PropsWithChildren<La
     <LanguageModalContext.Provider value={disclosure.onOpen}>
       {children}
 
-      <Modal isOpen={disclosure.isOpen} onOpenChange={disclosure.onOpenChange} hideCloseButton>
+      <Modal
+        isOpen={disclosure.isOpen}
+        onOpenChange={disclosure.onOpenChange}
+        hideCloseButton
+        scrollBehavior="outside"
+      >
         <ModalContent>
           {(onClose) => (
             <>

@@ -11,21 +11,15 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   NavbarBrand,
-  Dropdown,
-  DropdownTrigger,
   Button,
-  DropdownMenu,
-  DropdownItem,
   NavbarItem,
-  Badge,
   Tooltip,
 } from '@nextui-org/react'
-import { GearSix, Translate, MoonStars, Sun, Bookmarks } from '@phosphor-icons/react'
+import { Translate, MoonStars, Sun } from '@phosphor-icons/react'
 import { useThemeModal } from '@/features/Theme'
 import { useLanguageModal } from '@/features/Language/hook'
 import { Logotype } from '@/features/Brand'
 import clsx from 'clsx'
-import { useAppSelector } from '@/features/Store'
 import { useMainLinks } from './hook'
 
 export default function Navbar() {
@@ -63,7 +57,15 @@ export default function Navbar() {
   )
 
   // bookmarks
-  const bookmarks = useAppSelector((state) => state.bookmarks)
+  // const bookmarks = useAppSelector((state) => state.bookmarks)
+  // Computer programming
+  // -> Computer program
+  // -> Sequence
+  // -> Mathematics
+  // -> Knowledge
+  // -> Awareness of facts
+  // -> Awareness
+  // -> Philosophy
 
   // render some things only on client
   const [isMounted, setIsMounted] = useState(false)
@@ -105,7 +107,20 @@ export default function Navbar() {
         </NavbarContent>
 
         <NavbarContent justify="end">
-          <Dropdown>
+          <Button
+            variant="light"
+            isIconOnly
+            onClick={openLanguageModal}
+            aria-label={t('features.language.label')}
+          >
+            <Translate aria-label={t('features.language.label')} />
+          </Button>
+
+          <Button variant="light" isIconOnly onClick={openThemeModal} aria-label={t('features.theme.label')}>
+            {isMounted && themeIcon}
+          </Button>
+
+          {/* <Dropdown>
             <DropdownTrigger>
               <Button variant="light" isIconOnly>
                 <GearSix />
@@ -120,7 +135,7 @@ export default function Navbar() {
                 {t('features.theme.label')}
               </DropdownItem>
             </DropdownMenu>
-          </Dropdown>
+          </Dropdown> */}
         </NavbarContent>
       </NextUiNavbar>
 
@@ -170,7 +185,7 @@ export default function Navbar() {
           </Tooltip>
 
           {/* REFACTOR: to menu links */}
-          <Tooltip content={t('pages.main.bookmarks.titleAndLink')} placement="bottom">
+          {/* <Tooltip content={t('pages.main.bookmarks.titleAndLink')} placement="bottom">
             <Link href="/bookmarks">
               <Badge
                 content={isMounted ? bookmarks.length : 0}
@@ -179,16 +194,6 @@ export default function Navbar() {
               >
                 <Button variant="light" isIconOnly aria-label={t('pages.main.bookmarks.titleAndLink')}>
                   <Bookmarks aria-label={t('pages.main.bookmarks.titleAndLink')} />
-                </Button>
-              </Badge>
-            </Link>
-          </Tooltip>
-
-          {/* <Tooltip content={t('features.getQuote.label')} placement="bottom">
-            <Link href="/get-quote">
-              <Badge content={isMounted ? '' : 0} isInvisible={!isMounted} color="primary">
-                <Button variant="light" isIconOnly aria-label={t('features.getQuote.label')}>
-                  <Tag aria-label={t('features.getQuote.label')} />
                 </Button>
               </Badge>
             </Link>

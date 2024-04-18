@@ -21,6 +21,11 @@ export function useMainLinks(): NavigationLink[] {
         isNested: true,
       },
       {
+        href: '/bookmarks',
+        label: t('bookmarks.titleAndLink'),
+        isActive: isLinkActive,
+      },
+      {
         href: '/contact',
         label: t('contact.link'),
         isActive: isLinkActive,
