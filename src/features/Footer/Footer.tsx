@@ -13,12 +13,7 @@ export default function Footer() {
         <Logotype />
 
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/juridical/privacy-policy">{t('pages.juridical.privacyPolicy.titleAndLink')}</Link>
-          <Link href="/juridical/gdpr">{t('pages.juridical.gdpr.titleAndLink')}</Link>
-          <Link href="/juridical/disclaimer">{t('pages.juridical.disclaimer.titleAndLink')}</Link>
-          <Link href="/juridical/terms-and-conditions">
-            {t('pages.juridical.termsAndConditions.titleAndLink')}
-          </Link>
+          <Link href="/documents/privacy-policy">{t('pages.juridical.privacyPolicy.titleAndLink')}</Link>
         </div>
       </Section>
     </footer>
