@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 const initialState = {
+  userType: 'legalEntity',
   companyName: '',
   fullName: '',
   email: '',

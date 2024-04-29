@@ -40,6 +40,9 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
   const contact = useAppSelector((state) => state.contact)
   const dispatch = useAppDispatch()
 
+  // tabs
+  const [tabsKey, setTabsKey] = useState(contact.userType)
+
   // textarea length description
   const [textareaValue, setTextareaValue] = useState(contact.message)
 
@@ -104,7 +107,8 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
         classNames={{ panel: 'p-0' }}
         aria-label={`${t('contact.legalEntity')}/${t('contact.individual')}}`}
         fullWidth
-        defaultSelectedKey={contact.save && !contact.companyName ? 'individual' : 'legalEntity'}
+        selectedKey={tabsKey}
+        onSelectionChange={(key) => setTabsKey(key.toString())}
       >
         <Tab key="legalEntity" title={t('contact.legalEntity')}>
           <Input isRequired type="hidden" className="hidden" name="userType" value="legalEntity" />
@@ -116,6 +120,7 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
             defaultValue={contact.companyName}
             isInvalid={Boolean(formErrors && formErrors?.companyName && formErrors.companyName.length > 0)}
             errorMessage={formErrors ? formErrors?.companyName && formErrors.companyName : ''}
+            // autoFocus // TODO: conflict depending on userType with other fields
           />
         </Tab>
         <Tab key="individual" title={t('contact.individual')}>
@@ -132,6 +137,7 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
         defaultValue={contact.fullName}
         isInvalid={Boolean(formErrors && formErrors?.fullName && formErrors.fullName.length > 0)}
         errorMessage={formErrors ? formErrors?.fullName && formErrors.fullName : ''}
+        // autoFocus={tabsKey === 'individual'} // TODO: conflict depending on userType with other fields
       />
 
       <Input
@@ -167,7 +173,6 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
         <Textarea
           name="message"
           label={t('contact.message')}
-          defaultValue={contact.message}
           min={0}
           max={textareaMaxLength}
           minRows={5}
