@@ -29,6 +29,10 @@
       "save": "Uložit informace na tomto počítači pro budoucí požadavky",
       "send": "Poslat"
     },
+    "documents": {
+      "label": "Dokumenty",
+      "privacyPolicyOnlyInCzech": "Dokument \"Zásady ochrany osobních údajů\" je momentálně k dispozici pouze v českém jazyce"
+    },
     "error": {
       "fieldEmpty": "Pole nemůže být prázdné",
       "fieldTooLong": "Text je příliš dlouhý",
@@ -87,17 +91,8 @@
   },
   "pages": {
     "juridical": {
-      "disclaimer": {
-        "titleAndLink": "Odmítnutí odpovědnosti"
-      },
-      "gdpr": {
-        "titleAndLink": "GDPR"
-      },
       "privacyPolicy": {
         "titleAndLink": "Zásady ochrany osobních údajů"
-      },
-      "termsAndConditions": {
-        "titleAndLink": "Podmínky a pravidla"
       }
     },
     "main": {

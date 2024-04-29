@@ -29,6 +29,10 @@
       "save": "Save information on this computer for future inquiries",
       "send": "Send"
     },
+    "documents": {
+      "label": "Documents",
+      "privacyPolicyOnlyInCzech": "The document \"Privacy Policy\" is currently only available in Czech"
+    },
     "error": {
       "fieldEmpty": "Field cannot be empty",
       "fieldTooLong": "The text is too long",
@@ -87,17 +91,8 @@
   },
   "pages": {
     "juridical": {
-      "disclaimer": {
-        "titleAndLink": "Disclaimer"
-      },
-      "gdpr": {
-        "titleAndLink": "GDPR"
-      },
       "privacyPolicy": {
         "titleAndLink": "Privacy policy"
-      },
-      "termsAndConditions": {
-        "titleAndLink": "Terms and Conditions"
       }
     },
     "main": {

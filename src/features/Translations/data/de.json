@@ -29,6 +29,10 @@
       "save": "Speichern Sie die Informationen auf diesem Computer für zukünftige Anfragen",
       "send": "Senden"
     },
+    "documents": {
+      "label": "Dokumente",
+      "privacyPolicyOnlyInCzech": "Das Dokument \"Datenschutzerklärung\" ist derzeit nur in Tschechisch verfügbar"
+    },
     "error": {
       "fieldEmpty": "Das Feld darf nicht leer sein",
       "fieldTooLong": "Der Text ist kostenlos",
@@ -87,17 +91,8 @@
   },
   "pages": {
     "juridical": {
-      "disclaimer": {
-        "titleAndLink": "Haftungsausschluss"
-      },
-      "gdpr": {
-        "titleAndLink": "DSGVO"
-      },
       "privacyPolicy": {
         "titleAndLink": "Datenschutzbestimmungen"
-      },
-      "termsAndConditions": {
-        "titleAndLink": "Allgemeine Geschäftsbedingungen"
       }
     },
     "main": {

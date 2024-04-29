@@ -35,14 +35,7 @@ import { useDisclosure } from '@nextui-org/use-disclosure'
 import { ContactForm } from '@/features/Contact'
 import { ProductParams } from './page'
 
-// TODO: make a request form - show modal with items and centered section that asks whether user wants to
-//  complete request or add more products
-
 // TODO: cookies notice (or include the link to the appropriate information in the footer)
-
-// TODO(secondary): ask if user wants to save his contact data in order to simplify future requests and
-//  inform that data are either saved on current device (might be lost on clearing browsing data) or
-//  user can as well create an account
 
 // TODO: Google Gemini (https://gemini.google.com/app/99bd698714869264)
 //  Here are some key aspects to consider for making a legal website for a Czech company:
