@@ -1,4 +1,4 @@
-import { Input, Textarea, Checkbox, Button, Tabs, Tab } from '@nextui-org/react'
+import { Input, Textarea, Checkbox, Button, Tabs, Tab, Link } from '@nextui-org/react'
 import { useTranslations, useLocale } from 'next-intl'
 import { useFormState, useFormStatus } from 'react-dom'
 import {
@@ -64,6 +64,9 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
           break
         case FieldError.TOO_LONG:
           message = t('error.fieldTooLong')
+          break
+        case FieldError.MUST_BE_CHECKED:
+          message = t('error.mustBeChecked')
           break
         default:
           message = t('error.unknown')
@@ -180,9 +183,9 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
           value={textareaValue}
           onValueChange={setTextareaValue}
           isInvalid={Boolean(formErrors && formErrors?.message && formErrors.message.length > 0)}
-          // errorMessage={formErrors ? formErrors?.message && formErrors.message : ''}
         />
 
+        {/* instead of text area's errorMessage because two custom columns */}
         <div className="flex flex-row justify-between text-tiny p-1 gap-1.5">
           <p className="text-danger">{formErrors ? formErrors?.message && formErrors.message : ''}</p>
 
@@ -199,6 +202,30 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
       >
         {t('contact.save')}
       </Checkbox>
+
+      <div>
+        <Checkbox
+          name="agreeWithPrivacyPolicy"
+          defaultSelected={contact.agreeWithPrivacyPolicy}
+          required
+          isInvalid={Boolean(
+            formErrors && formErrors?.agreeWithPrivacyPolicy && formErrors.agreeWithPrivacyPolicy.length > 0,
+          )}
+        >
+          {t.rich('documents.iAgreeWithPrivacyPolicy', {
+            l: (chunks: any) => (
+              <Link href="/documents/privacy-policy" isExternal className="inline">
+                {chunks}
+              </Link>
+            ),
+          })}
+        </Checkbox>
+
+        {/* errorMessage prop that is missing on <Checkbox /> */}
+        <p className="text-tiny p-1 text-danger">
+          {formErrors ? formErrors?.agreeWithPrivacyPolicy && formErrors.agreeWithPrivacyPolicy : ''}
+        </p>
+      </div>
 
       {formErrors &&
         ('url' in formErrors || 'locale' in formErrors || Object.keys(formErrors).length === 0) && (

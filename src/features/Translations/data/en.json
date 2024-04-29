@@ -30,13 +30,15 @@
       "send": "Send"
     },
     "documents": {
-      "label": "Documents",
-      "privacyPolicyOnlyInCzech": "The document \"Privacy Policy\" is currently only available in Czech"
+      "documentOnlyInCzech": "This document is currently available only in Czech",
+      "iAgreeWithPrivacyPolicy": "I agree to the <l>Privacy Policy</l>",
+      "label": "Documents"
     },
     "error": {
       "fieldEmpty": "Field cannot be empty",
       "fieldTooLong": "The text is too long",
       "fieldWrongFormat": "Invalid format",
+      "mustBeChecked": "Must be checked",
       "somethingWentWrong": "Something went wrong, please try again later",
       "unknown": "Unknown error"
     },

@@ -81,6 +81,7 @@ export async function submitContactForm(_: FormState, formData: FormData) {
     hasWhatsApp: formData.has('hasWhatsApp'),
     message: formData.get('message'),
     save: formData.has('save'),
+    agreeWithPrivacyPolicy: formData.has('agreeWithPrivacyPolicy'),
   })
 
   if (fields.success) {

@@ -30,13 +30,15 @@
       "send": "Senden"
     },
     "documents": {
-      "label": "Dokumente",
-      "privacyPolicyOnlyInCzech": "Das Dokument \"Datenschutzerklärung\" ist derzeit nur in Tschechisch verfügbar"
+      "documentOnlyInCzech": "Dieses Dokument ist derzeit nur in Tschechisch verfügbar",
+      "iAgreeWithPrivacyPolicy": "Ich stimme den <l>Datenschutzbestimmungen</l> zu",
+      "label": "Dokumente"
     },
     "error": {
       "fieldEmpty": "Das Feld darf nicht leer sein",
       "fieldTooLong": "Der Text ist kostenlos",
       "fieldWrongFormat": "Ungültiges Format",
+      "mustBeChecked": "Muss angekreuzt sein",
       "somethingWentWrong": "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später noch einmal",
       "unknown": "Unbekannter Fehler"
     },

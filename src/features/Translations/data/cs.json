@@ -30,13 +30,15 @@
       "send": "Poslat"
     },
     "documents": {
-      "label": "Dokumenty",
-      "privacyPolicyOnlyInCzech": "Dokument \"Zásady ochrany osobních údajů\" je momentálně k dispozici pouze v českém jazyce"
+      "documentOnlyInCzech": "Tento dokument je momentálně k dispozici pouze v českém jazyce",
+      "iAgreeWithPrivacyPolicy": "Souhlasím se <l>Zásadami ochrany osobních údajů</l>",
+      "label": "Dokumenty"
     },
     "error": {
       "fieldEmpty": "Pole nemůže být prázdné",
       "fieldTooLong": "Text je příliš dlouhý",
       "fieldWrongFormat": "Nesprávný formát",
+      "mustBeChecked": "Musí být zaškrtnuto",
       "somethingWentWrong": "Něco se pokazilo, zkuste to prosím znovu později",
       "unknown": "Neznámá chyba"
     },

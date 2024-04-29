@@ -29,7 +29,7 @@ export default function PageContent({ params }: LocaleParams) {
 
       {params.locale !== 'cs' && (
         <div className="py-3 px-4 bg-default/50 text-danger-foreground text-medium rounded-lg">
-          {t('features.documents.privacyPolicyOnlyInCzech')}
+          {t('features.documents.documentOnlyInCzech')}
         </div>
       )}
 

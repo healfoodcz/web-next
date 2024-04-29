@@ -10,6 +10,7 @@ const initialState = {
   hasWhatsApp: false,
   message: '',
   save: false,
+  agreeWithPrivacyPolicy: false,
 }
 
 const contactSlice = createSlice({

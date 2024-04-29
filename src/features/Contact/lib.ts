@@ -79,10 +79,12 @@ export enum FieldError {
   EMPTY = 'EMPTY',
   WRONG_FORMAT = 'WRONG_FORMAT',
   TOO_LONG = 'TOO_LONG',
+  MUST_BE_CHECKED = 'MUST_BE_CHECKED',
 }
 
 const missing = { required_error: FieldError.MISSING }
 const wrongFormat = { message: FieldError.WRONG_FORMAT }
+const mustBeChecked = { message: FieldError.MUST_BE_CHECKED }
 
 function phoneValidator(value: string) {
   return validator.isMobilePhone(value, 'any', { strictMode: true })
@@ -105,6 +107,7 @@ export const contactFormSchema = z
     hasWhatsApp: z.boolean(missing),
     message: z.string().trim().max(textareaMaxLength, FieldError.TOO_LONG).nullable(),
     save: z.boolean(missing),
+    agreeWithPrivacyPolicy: z.boolean().refine((val) => val, mustBeChecked),
   })
   .superRefine(({ userType, companyName }, refinementContext) => {
     if (userType === 'legalEntity' && (!companyName || companyName.length === 0)) {
