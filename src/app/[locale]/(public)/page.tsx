@@ -1,5 +1,5 @@
 import { LocaleParams } from '@/features/Translations'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, unstable_setRequestLocale as setRequestLocale } from 'next-intl/server'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import earth from '@/../public/earth.jpg'
@@ -16,7 +16,8 @@ export async function generateMetadata({ params: { locale } }: LocaleParams) {
   }
 }
 
-export default function Page() {
+export default function Page({ params }: LocaleParams) {
+  setRequestLocale(params.locale)
   // @ts-ignore
   const t = useTranslations('pages.main')
 
