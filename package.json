@@ -12,6 +12,7 @@
     "@nextui-org/react": "^2.2.9",
     "@phosphor-icons/react": "^2.0.15",
     "@reduxjs/toolkit": "^2.2.2",
+    "@tailwindcss/typography": "^0.5.13",
     "@types/node-telegram-bot-api": "^0.64.6",
     "@types/redux-persist": "^4.3.1",
     "@types/validator": "^13.11.9",

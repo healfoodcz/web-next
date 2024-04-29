@@ -1,5 +1,6 @@
 import type { Config as TailwindConfig } from 'tailwindcss'
 import { nextui } from '@nextui-org/react'
+import typography from '@tailwindcss/typography'
 
 export default {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'],
@@ -50,5 +51,6 @@ export default {
         },
       },
     }),
+    typography,
   ],
 } satisfies TailwindConfig
