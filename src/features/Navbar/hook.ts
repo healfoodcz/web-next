@@ -1,11 +1,9 @@
-import { Locale } from '@/features/Translations'
-import { useLocale, useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl'
 import { useMemo } from 'react'
 import { NavigationLink, isLinkActive } from './lib'
 
 export function useMainLinks(): NavigationLink[] {
   const t = useTranslations('pages.main')
-  const locale = useLocale() as Locale
 
   return useMemo(
     () => [
@@ -31,6 +29,6 @@ export function useMainLinks(): NavigationLink[] {
         isActive: isLinkActive,
       },
     ],
-    [locale, t],
+    [t],
   )
 }
