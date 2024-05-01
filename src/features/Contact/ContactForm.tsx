@@ -27,7 +27,7 @@ function SubmitButton() {
 }
 
 interface ContactFormProps {
-  handleClose: () => void
+  handleClose?: () => void
   product?: Product
 }
 
@@ -91,7 +91,9 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
       dispatch(wipe(undefined))
     }
 
-    handleClose()
+    if (handleClose) {
+      handleClose()
+    }
   }, [dispatch, formErrors, formState, formState?.type, handleClose])
 
   return (
@@ -236,9 +238,11 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
 
       <SubmitButton />
 
-      <Button type="reset" onClick={handleClose}>
-        {t('menu.cancel')}
-      </Button>
+      {handleClose && (
+        <Button type="reset" onClick={handleClose}>
+          {t('menu.cancel')}
+        </Button>
+      )}
     </form>
   )
 }
