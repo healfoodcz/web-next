@@ -73,6 +73,18 @@ import validator from 'validator'
 //   ...fieldError('hasWhatsApp'),
 // }
 
+export function normalizePhoneNumber(phoneNumber: string) {
+  return phoneNumber.replace(/\s/g, '')
+}
+
+export function createTelegramLink(phoneNumber: string) {
+  return `https://t.me/${normalizePhoneNumber(phoneNumber)}`
+}
+
+export function createWhatsAppLink(phoneNumber: string) {
+  return `https://wa.me/${normalizePhoneNumber(phoneNumber)}`
+}
+
 // eslint-disable-next-line no-shadow
 export enum FieldError {
   MISSING = 'MISSING',

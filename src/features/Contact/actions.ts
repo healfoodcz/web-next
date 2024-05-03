@@ -2,7 +2,11 @@
 
 import { headers } from 'next/headers'
 import { FormState, createFailedFormState, createSuccessfulFormState } from '@/features/Form'
-import { contactFormSchema } from '@/features/Contact/lib'
+import {
+  contactFormSchema,
+  createWhatsAppLink as createWALink,
+  createTelegramLink as createTgLink,
+} from '@/features/Contact/lib'
 import { getTelegramBot } from '@/features/Contact/lib.server'
 
 // formatting helpers
@@ -73,7 +77,7 @@ export async function submitContactForm(_: FormState, formData: FormData) {
     productId: formData.get('productId'),
     productTitle: formData.get('productTitle'),
     userType: formData.get('userType'),
-    companyName: formData.get('companyName'),
+    name: formData.get('companyName'),
     fullName: formData.get('fullName'),
     email: formData.get('email'),
     phone: formData.get('phone'),
@@ -93,7 +97,6 @@ export async function submitContactForm(_: FormState, formData: FormData) {
 
   // additional data
   const ip = headers().get('x-forwarded-for') ?? undefined
-  const phoneShort = fields.data.phone.replace(/\s/g, '')
 
   // create inquiry
   /*
@@ -132,8 +135,8 @@ export async function submitContactForm(_: FormState, formData: FormData) {
     keyValue('Название компании', fields.data.companyName),
     keyValue('Эл. адрес', fields.data.email),
     keyValue('Номер телефона', fields.data.phone),
-    keyValue('Доступен в Telegram', link('Да', `https://t.me/${phoneShort}`), fields.data.hasTelegram),
-    keyValue('Доступен в WhatsApp', link('Да', `https://wa.me/${phoneShort}`), fields.data.hasWhatsApp),
+    keyValue('Доступен в Telegram', link('Да', createTgLink(fields.data.phone)), fields.data.hasTelegram),
+    keyValue('Доступен в WhatsApp', link('Да', createWALink(fields.data.phone)), fields.data.hasWhatsApp),
   ]
     .filter(Boolean)
     .join('\n')
