@@ -77,7 +77,7 @@ export async function submitContactForm(_: FormState, formData: FormData) {
     productId: formData.get('productId'),
     productTitle: formData.get('productTitle'),
     userType: formData.get('userType'),
-    name: formData.get('companyName'),
+    companyName: formData.get('companyName'),
     fullName: formData.get('fullName'),
     email: formData.get('email'),
     phone: formData.get('phone'),
