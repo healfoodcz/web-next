@@ -46,16 +46,13 @@ function ContactField({ href, Icon, description, content }: ContactFieldProps) {
   )
 }
 
-// TODO BUG: нажать на арбуз и на кнопку заказать (прорендрится окно обработки запроса) и если далее пойти неа
-//  страницу с контактами, то в ней ТОЖЕ будет ошибка
-
 export default function PageContent() {
   const t = useTranslations()
 
   return (
     <Section className="flex flex-col md:flex-row gap-6 items-start">
       <Card className="w-full">
-        <CardBody className="flex flex-col gap-4">
+        <CardBody className="flex flex-col gap-4 p-4">
           <ContactField
             href={`https://google.com/search?q="${contactInformation.companyName}"`}
             Icon={BuildingOffice}
