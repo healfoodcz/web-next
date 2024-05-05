@@ -1,19 +1,10 @@
 'use client'
 
-import { Section } from '@/features/Page'
+import React from 'react'
 import { useTranslations } from 'next-intl'
 import { Breadcrumbs, BreadcrumbItem, ScrollShadow } from '@nextui-org/react'
-import React from 'react'
+import { Section } from '@/features/Page'
 import { LocaleParams } from '@/features/Translations'
-
-// export async function generateMetadata({ params: { locale } }: LocaleParams) {
-//   const t = await getTranslations({ locale, namespace: 'pages.juridical.privacyPolicy' })
-//
-//   return {
-//     title: createTitle(t('titleAndLink')),
-//     description: '',
-//   }
-// }
 
 export default function PageContent({ params }: LocaleParams) {
   const t = useTranslations()
@@ -28,7 +19,7 @@ export default function PageContent({ params }: LocaleParams) {
       </ScrollShadow>
 
       {params.locale !== 'cs' && (
-        <div className="py-3 px-4 bg-default/50 text-danger-foreground text-medium rounded-lg">
+        <div className="py-3 px-4 bg-default/50 text-default-foreground text-medium rounded-lg">
           {t('features.documents.documentOnlyInCzech')}
         </div>
       )}
