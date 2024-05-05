@@ -94,14 +94,14 @@ export default function PageContent() {
           />
 
           <ContactField
-            href={`tel:${createTelegramLink(contactInformation.contactPhone)}`}
+            href={createTelegramLink(contactInformation.contactPhone)}
             Icon={TelegramLogo}
             description="Telegram"
             content={contactInformation.contactPhone}
           />
 
           <ContactField
-            href={`tel:${createWhatsAppLink(contactInformation.contactPhone)}`}
+            href={createWhatsAppLink(contactInformation.contactPhone)}
             Icon={WhatsappLogo}
             description="WhatsApp"
             content={contactInformation.contactPhone}
