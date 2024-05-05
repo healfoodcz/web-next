@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { FLUSH, PAUSE, REGISTER, REHYDRATE, persistReducer, persistStore } from 'redux-persist'
 import WebStorage from 'redux-persist/lib/storage'
 import { PERSIST, PURGE } from 'redux-persist/es/constants'
-import { bookmarks, visited } from '@/features/Product'
-import { contact } from '@/features/Contact'
+import { bookmarks, visited } from '@/features/Product/slices'
+import { contact } from '@/features/Contact/slices'
 
 const reducers = combineReducers({
   bookmarks,
