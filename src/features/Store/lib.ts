@@ -1,7 +1,7 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { useDispatch, useSelector } from 'react-redux'
 import { FLUSH, PAUSE, REGISTER, REHYDRATE, persistReducer, persistStore } from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
+import WebStorage from 'redux-persist/lib/storage'
 import { PERSIST, PURGE } from 'redux-persist/es/constants'
 import { bookmarks, visited } from '@/features/Product'
 import { contact } from '@/features/Contact'
@@ -14,7 +14,7 @@ const reducers = combineReducers({
 
 const persistConfig = {
   key: 'root',
-  storage,
+  storage: WebStorage,
   whitelist: ['bookmarks', 'visited', 'contact'],
 }
 
