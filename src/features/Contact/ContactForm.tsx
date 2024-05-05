@@ -125,7 +125,6 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
             defaultValue={contact.companyName}
             isInvalid={Boolean(formErrors && formErrors?.companyName && formErrors.companyName.length > 0)}
             errorMessage={formErrors ? formErrors?.companyName && formErrors.companyName : ''}
-            // autoFocus // TODO: conflict depending on userType with other fields
           />
         </Tab>
         <Tab key="individual" title={t('contact.individual')}>
@@ -142,7 +141,6 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
         defaultValue={contact.fullName}
         isInvalid={Boolean(formErrors && formErrors?.fullName && formErrors.fullName.length > 0)}
         errorMessage={formErrors ? formErrors?.fullName && formErrors.fullName : ''}
-        // autoFocus={tabsKey === 'individual'} // TODO: conflict depending on userType with other fields
       />
 
       <Input
