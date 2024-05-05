@@ -17,6 +17,10 @@
     },
     "contact": {
       "communicateVia": "Can we communicate via {application}?",
+      "companyCommercialRegister": "Registration in the Commercial Register",
+      "companyCommercialRegisterLabel": "Registered in the Commercial Register of the Regional Court in Pilsen, Section C, File No. 39811",
+      "companyId": "Company Identification Number",
+      "companyLegalAddress": "Legal address",
       "companyName": "Company Name",
       "email": "Email address",
       "fullName": "Full name",
@@ -28,6 +32,11 @@
       "phoneDescription": "Enter phone number with country code, e.g. +420",
       "save": "Save information on this computer for future inquiries",
       "send": "Send"
+    },
+    "copy": {
+      "hasBeenCopied": "Copied",
+      "hasNotBeenCopied": "Error",
+      "toBeCopied": "Copy"
     },
     "documents": {
       "documentOnlyInCzech": "This document is currently available only in Czech",

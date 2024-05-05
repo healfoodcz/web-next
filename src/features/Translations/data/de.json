@@ -17,6 +17,10 @@
     },
     "contact": {
       "communicateVia": "Können wir per {application} kommunizieren?",
+      "companyCommercialRegister": "Eintragung im Handelsregister",
+      "companyCommercialRegisterLabel": "Eingetragen im Handelsregister des Bezirksgerichts Pilsen, Abteilung C, Aktenzeichen 39811",
+      "companyId": "Identifikationsnummer",
+      "companyLegalAddress": "Firmensitz",
       "companyName": "Firmenname",
       "email": "E-Mail-Adresse",
       "fullName": "Vollständiger Name",
@@ -28,6 +32,11 @@
       "phoneDescription": "Geben Sie Ihre Telefonnummer mit Vorwahl ein, z.B. +420",
       "save": "Speichern Sie die Informationen auf diesem Computer für zukünftige Anfragen",
       "send": "Senden"
+    },
+    "copy": {
+      "hasBeenCopied": "Kopiert",
+      "hasNotBeenCopied": "Fehler",
+      "toBeCopied": "Kopieren"
     },
     "documents": {
       "documentOnlyInCzech": "Dieses Dokument ist derzeit nur in Tschechisch verfügbar",

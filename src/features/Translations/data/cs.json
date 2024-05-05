@@ -17,6 +17,10 @@
     },
     "contact": {
       "communicateVia": "Můžeme komunikovat prostřednictvím aplikace {application}?",
+      "companyCommercialRegister": "Zápis do Obchodního rejstříku",
+      "companyCommercialRegisterLabel": "Společnost je zapsána v obchodním rejstříku vedeném u Krajského soudu v Plzni, oddílu C, vložce 39811",
+      "companyId": "IČO",
+      "companyLegalAddress": "Sídlo",
       "companyName": "Název společnosti",
       "email": "E-mailová adresa",
       "fullName": "Celé jméno",
@@ -28,6 +32,11 @@
       "phoneDescription": "Zadejte telefonní číslo s předvolbou, např. +420",
       "save": "Uložit informace na tomto počítači pro budoucí požadavky",
       "send": "Poslat"
+    },
+    "copy": {
+      "hasBeenCopied": "Zkopírováno",
+      "hasNotBeenCopied": "Chyba",
+      "toBeCopied": "Kopírovat"
     },
     "documents": {
       "documentOnlyInCzech": "Tento dokument je momentálně k dispozici pouze v českém jazyce",
