@@ -1,7 +1,8 @@
-import { ImageMedia, VideoMedia, SingleMedia, filterImageProps } from '@/features/Media'
 import Image from 'next/image'
 import React, { MouseEventHandler, useMemo } from 'react'
 import clsx from 'clsx'
+import { filterImageProps } from './lib'
+import { ImageMedia, VideoMedia, SingleMedia } from './model'
 
 interface ThumbnailProps<SomeMedia extends SingleMedia> {
   media: SomeMedia

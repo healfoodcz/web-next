@@ -1,10 +1,10 @@
 import { useTranslations } from 'next-intl'
 import { useMemo, useState } from 'react'
-import { CopyState } from '@/features/Copy/model'
 import { Check, Copy, X } from '@phosphor-icons/react'
 import { Tooltip, Button } from '@nextui-org/react'
 import clsx from 'clsx'
-import { device } from '../Device'
+import { device } from '@/features/Device'
+import { CopyState } from './model'
 
 interface CopyButtonProps {
   copyContent: string

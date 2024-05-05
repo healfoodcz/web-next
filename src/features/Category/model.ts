@@ -1,6 +1,6 @@
 import { Translated } from '@/features/Translations'
 import { Products, Product } from '@/features/Product'
-import { Params } from '../Common/lib'
+import { Params } from '@/features/Common'
 
 export interface Category {
   id: string

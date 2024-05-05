@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { getRequestConfig } from 'next-intl/server'
 import { createSharedPathnamesNavigation } from 'next-intl/navigation'
-import { Params } from '@/features/Common/lib/next'
+import { Params } from '@/features/Common'
 
 export const translations = {
   locales: ['en', 'ru', 'de', 'cs'],

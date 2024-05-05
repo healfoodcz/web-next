@@ -15,7 +15,7 @@ import {
 import { useDisclosure } from '@nextui-org/use-disclosure'
 import { useTheme } from 'next-themes'
 import { useTranslations } from 'next-intl'
-import { ThemeExample } from '@/features/Theme/ThemeExample'
+import { ThemeExample } from './ThemeExample'
 
 export const ThemeModalContext = createContext<(() => void) | null>(null)
 

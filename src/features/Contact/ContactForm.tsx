@@ -1,19 +1,14 @@
 import { Input, Textarea, Checkbox, Button, Tabs, Tab, Link } from '@nextui-org/react'
 import { useTranslations, useLocale } from 'next-intl'
 import { useFormState, useFormStatus } from 'react-dom'
-import {
-  submitContactForm,
-  populate,
-  wipe,
-  toggleSave,
-  FieldError,
-  textareaMaxLength,
-} from '@/features/Contact'
 import { Product } from '@/features/Product'
 import { useEffect, useMemo, useState } from 'react'
 import { FormStateType } from '@/features/Form'
 import { useAppSelector, useAppDispatch } from '@/features/Store'
 import clsx from 'clsx'
+import { submitContactForm } from './actions'
+import { FieldError, textareaMaxLength } from './lib'
+import { populate, wipe, toggleSave } from './slices'
 
 function SubmitButton() {
   const t = useTranslations('features.contact')

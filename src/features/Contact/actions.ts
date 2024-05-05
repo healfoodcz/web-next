@@ -2,12 +2,12 @@
 
 import { headers } from 'next/headers'
 import { FormState, createFailedFormState, createSuccessfulFormState } from '@/features/Form'
+import { getTelegramBot } from './lib.server'
 import {
   contactFormSchema,
   createWhatsAppLink as createWALink,
   createTelegramLink as createTgLink,
-} from '@/features/Contact/lib'
-import { getTelegramBot } from '@/features/Contact/lib.server'
+} from './lib'
 
 // formatting helpers
 function bold(text?: string) {

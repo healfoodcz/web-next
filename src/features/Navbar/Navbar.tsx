@@ -3,7 +3,6 @@
 import { useState, useMemo, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { useTheme } from 'next-themes'
-import { usePathname, Link } from '@/features/Translations'
 import { Navbar as NextUiNavbar } from '@nextui-org/navbar'
 import {
   NavbarContent,
@@ -15,11 +14,12 @@ import {
   NavbarItem,
   Tooltip,
 } from '@nextui-org/react'
+import clsx from 'clsx'
 import { Translate, MoonStars, Sun } from '@phosphor-icons/react'
+import { usePathname, Link } from '@/features/Translations'
 import { useThemeModal } from '@/features/Theme'
 import { useLanguageModal } from '@/features/Language/hook'
 import { Logotype } from '@/features/Brand'
-import clsx from 'clsx'
 import { useMainLinks } from './hook'
 
 export default function Navbar() {

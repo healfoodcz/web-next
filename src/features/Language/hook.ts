@@ -1,5 +1,5 @@
-import { LanguageModalContext } from '@/features/Language/context'
 import { useContext } from 'react'
+import { LanguageModalContext } from '@/features/Language'
 
 export function useLanguageModal() {
   const context = useContext(LanguageModalContext)

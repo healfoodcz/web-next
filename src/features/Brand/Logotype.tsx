@@ -1,6 +1,6 @@
-import { Link } from '@/features/Translations'
 import clsx from 'clsx'
-import { fontLogo } from '@/features/Common/lib'
+import { Link } from '@/features/Translations'
+import { fontLogo } from '@/features/Common'
 
 export default function Logotype() {
   return (

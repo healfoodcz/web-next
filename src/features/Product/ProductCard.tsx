@@ -1,10 +1,10 @@
-import { Locale, Link } from '@/features/Translations'
-import { Product } from '@/features/Product'
 import { Card, CardBody, CardFooter } from '@nextui-org/react'
 import { useMemo } from 'react'
 import clsx from 'clsx'
-import { capitalize } from '@/features/Common/lib'
+import { Locale, Link } from '@/features/Translations'
+import { capitalize } from '@/features/Common'
 import { Thumbnail } from '@/features/Media'
+import { Product } from './model'
 
 interface ProductProps {
   linkBase: string

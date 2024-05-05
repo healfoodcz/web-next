@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl'
-import Section from '@/features/Page/Section'
+import { Section } from '@/features/Page'
 import { Link } from '@/features/Translations'
 import { Logotype } from '@/features/Brand'
 
