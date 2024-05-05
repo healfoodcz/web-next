@@ -14,42 +14,32 @@ export default function CopyButton({ copyContent }: CopyButtonProps) {
   const t = useTranslations('features.copy')
   const [copyState, setCopyState] = useState<CopyState>(CopyState.TO_BE_COPIED)
   const copyMessage = useMemo(() => {
-    switch (copyState) {
-      case CopyState.TO_BE_COPIED:
-        return t('toBeCopied')
-      case CopyState.HAS_BEEN_COPIED:
-        return t('hasBeenCopied')
-      case CopyState.HAS_NOT_BEEN_COPIED:
-      default:
-        return t('hasNotBeenCopied')
-    }
+    const map = {
+      [CopyState.TO_BE_COPIED]: t('toBeCopied'),
+      [CopyState.HAS_BEEN_COPIED]: t('hasBeenCopied'),
+      [CopyState.HAS_NOT_BEEN_COPIED]: t('hasNotBeenCopied'),
+    } as const
+
+    return map[copyState]
   }, [copyState, t])
   const copyIcon = useMemo(() => {
-    const commonProps = {
-      className: 'flex-shrink-0',
-      size: 16,
-    }
+    const commonProps = { className: 'flex-shrink-0', size: 16 }
+    const map = {
+      [CopyState.TO_BE_COPIED]: <Copy aria-label={t('toBeCopied')} {...commonProps} />,
+      [CopyState.HAS_BEEN_COPIED]: <Check aria-label={t('hasBeenCopied')} {...commonProps} />,
+      [CopyState.HAS_NOT_BEEN_COPIED]: <X aria-label={t('hasNotBeenCopied')} {...commonProps} />,
+    } as const
 
-    switch (copyState) {
-      case CopyState.TO_BE_COPIED:
-        return <Copy aria-label={t('toBeCopied')} {...commonProps} />
-      case CopyState.HAS_BEEN_COPIED:
-        return <Check aria-label={t('hasBeenCopied')} {...commonProps} />
-      case CopyState.HAS_NOT_BEEN_COPIED:
-      default:
-        return <X aria-label={t('hasNotBeenCopied')} {...commonProps} />
-    }
+    return map[copyState]
   }, [copyState, t])
   const copyColor = useMemo(() => {
-    switch (copyState) {
-      case CopyState.TO_BE_COPIED:
-        return 'default'
-      case CopyState.HAS_BEEN_COPIED:
-        return 'success'
-      case CopyState.HAS_NOT_BEEN_COPIED:
-      default:
-        return 'danger'
-    }
+    const map = {
+      [CopyState.TO_BE_COPIED]: 'default',
+      [CopyState.HAS_BEEN_COPIED]: 'success',
+      [CopyState.HAS_NOT_BEEN_COPIED]: 'danger',
+    } as const
+
+    return map[copyState]
   }, [copyState])
 
   function handleCopy() {
