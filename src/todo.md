@@ -7,6 +7,6 @@ Marks:
 - (M) - medium priority
 - (L) - low priority
 
-## (H) Dockerize for the ease of use
+## (H) Add brand's favicon.ico
 
 ## (L) Use logger for server side actions?

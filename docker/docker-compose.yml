@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  next-app:
+    build:
+      context: ../
+      dockerfile: ./docker/Dockerfile
+    container_name: next-app
+    restart: always
+    networks:
+      - network1
+    volumes:
+      - ../:/app
+
+networks:
+  network1:
+    external: true
