@@ -7,11 +7,11 @@ export function useMainLinks(): NavigationLink[] {
 
   return useMemo(
     () => [
-      {
-        href: '/',
-        label: t('home.link'),
-        isActive: isLinkActive,
-      },
+      // {
+      //   href: '/',
+      //   label: t('home.link'),
+      //   isActive: isLinkActive,
+      // },
       {
         href: '/catalog',
         label: t('catalog.link'),
