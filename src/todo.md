@@ -7,7 +7,6 @@ Marks:
 - (M) - medium priority
 - (L) - low priority
 
-## (H) Globally usable alert component
-- (H) ContactForm sending feedback - successful
+## (H) Dockerize for the ease of use
 
 ## (L) Use logger for server side actions?

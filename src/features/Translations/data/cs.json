@@ -23,6 +23,7 @@
       "companyLegalAddress": "Sídlo",
       "companyName": "Název společnosti",
       "email": "E-mailová adresa",
+      "formSentSuccessfully": "Děkujeme za Vaši zprávu! Zprávu jsme obdrželi a co nejdříve Vám odpovíme.",
       "fullName": "Celé jméno",
       "individual": "Fyzická osoba",
       "legalEntity": "Právnická osoba",

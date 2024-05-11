@@ -74,11 +74,25 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
     return mappedFormErrors
   }, [formState, t])
 
+  // form view - the form itself or the "thank-you" view
+  const [view, setView] = useState<'form' | 'thank-you'>('form')
+
+  function handleThankYouClick() {
+    if (handleClose) {
+      return handleClose()
+    }
+
+    return setView('form')
+  }
+
+  // redux effect
   useEffect(() => {
     if (formState === null || formState.type === FormStateType.FAILED) {
       // console.debug(formErrors)
       return
     }
+
+    setView('thank-you')
 
     if (formState.data?.save) {
       dispatch(populate(formState.data))
@@ -86,13 +100,26 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
       dispatch(wipe(undefined))
     }
 
-    if (handleClose) {
-      handleClose()
-    }
+    // update: don't close since there is "thank-you" view that will handle this
+    // if (handleClose) {
+    //   handleClose()
+    // }
   }, [dispatch, formErrors, formState, formState?.type, handleClose])
 
+  // handle "thank-you" view render
+  if (view === 'thank-you') {
+    return (
+      <div className="flex flex-col gap-4">
+        <p>{t('contact.formSentSuccessfully')}</p>
+        <Button color="primary" onClick={handleThankYouClick}>
+          {t('menu.done')}
+        </Button>
+      </div>
+    )
+  }
+
   return (
-    <form className="flex flex-col gap-4 pb-4" action={formAction}>
+    <form className="flex flex-col gap-4" action={formAction}>
       {product && (
         <>
           <Input isRequired type="hidden" className="hidden" name="productId" value={product.id} />
@@ -136,6 +163,7 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
         defaultValue={contact.fullName}
         isInvalid={Boolean(formErrors && formErrors?.fullName && formErrors.fullName.length > 0)}
         errorMessage={formErrors ? formErrors?.fullName && formErrors.fullName : ''}
+        className={tabsKey === 'individual' ? '-mt-4' : ''}
       />
 
       <Input
@@ -232,7 +260,7 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
       <SubmitButton />
 
       {handleClose && (
-        <Button type="reset" onClick={handleClose}>
+        <Button className="mb-4" type="reset" onClick={handleClose}>
           {t('menu.cancel')}
         </Button>
       )}
