@@ -7,10 +7,11 @@ Marks:
 - (M) - medium priority
 - (L) - low priority
 
-## (H) Deployment pipeline
+## (H) Deployment
 - what do we have:
-  1. private GitHub repository
-  2. dockerized app (using docker-compose)
+  1. github.com/healfoodcz/next-app.git (private)
+  2. /app/docker/docker-compose.yml
+      - (!) needs a fix with installing the dependencies
 
 ## (L) Server side logger
 
