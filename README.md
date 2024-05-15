@@ -2,17 +2,20 @@
 
 A web application written for HEALFOOD CZ s.r.o. company.
 
-> Here should be image previews of the web application
+> TODO: web app preview (mini gallery?)
 
 ## Software prerequisites
 
 - Docker
+
+or
+
 - Node.js
 - NPM
 
-## Start
+## Start (production)
 
-- If using Docker, then `./cli/up-prod`
+- If using Docker, then `./cli/up`
 
 otherwise
 
@@ -21,22 +24,5 @@ otherwise
 
 ## Develop
 
-- If using Docker, then `./cli/up-dev`
-
-otherwise
-
 - `npm install`
 - `npm run start:dev`
-
-## TODO.dev
-
-- [x] Fix annoying disability to scroll after page load
-- [ ] Add home page
-- [x] Add catalog page
-- [ ] Add contact page
-- [ ] Add legal pages
-- [ ] First release
-- [ ] External links catcher
-- [ ] Add animations
-- [ ] Add CMS
-- [ ] Explore modification config to minimize rewriting of common styles (https://nextui.org/docs/customization/custom-variants)

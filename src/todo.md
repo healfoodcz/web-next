@@ -12,5 +12,17 @@ Marks:
   1. private GitHub repository
   2. dockerized app (using docker-compose)
 
-## (L) Use logger for server side actions?
+## (L) Server side logger
 
+## (L) Add home page
+
+## (L) First release
+
+## (L) External links catcher
+
+## (L) Add animations
+
+## (L) Add CMS
+
+## (L) Explore modification config to minimize rewriting of common
+  styles (https://nextui.org/docs/customization/custom-variants)
