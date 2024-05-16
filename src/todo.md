@@ -7,11 +7,8 @@ Marks:
 - (M) - medium priority
 - (L) - low priority
 
-## (H) Deployment
-- what do we have:
-  1. github.com/healfoodcz/next-app.git (private)
-  2. /app/docker/docker-compose.yml
-      - (!) needs a fix with installing the dependencies
+# (M) Refactor to keep features in the right directory
+  - at `src/app/[locale]/(public)/catalog/[category]/[product]/page.content.tsx`
 
 ## (L) Server side logger
 

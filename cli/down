@@ -3,10 +3,9 @@
 # exit if error happens
 set -e
 
-# go to docker
-script_dir="$( cd "$(dirname "$0")" ; pwd -P )"
-cd "$script_dir"
-cd "../docker"
+# go to project root
+cd "$( cd "$(dirname "$0")" ; pwd -P )"
+cd "../"
 
-# compose
+# compose the container
 docker-compose --project-name healfoodcz down --remove-orphans

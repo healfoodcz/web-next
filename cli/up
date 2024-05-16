@@ -1,12 +1,11 @@
 #!/usr/bin/env sh
 
-# exit if error happens
-set -e
+# go to project root
+cd "$( cd "$(dirname "$0")" ; pwd -P )"
+cd "../"
 
-# go to docker
-script_dir="$( cd "$(dirname "$0")" ; pwd -P )"
-cd "$script_dir"
-cd "../docker"
+# make sure previous container is down
+./cli/down
 
-# compose
+# compose the container
 docker-compose --project-name healfoodcz up --detach --build
