@@ -56,7 +56,7 @@ export default function PageContent({ params }: LocaleParams & CategoryParams) {
         <Card className="flex-shrink-0 sm:self-start sm:sticky sm:top-[5.5rem]">
           <CardBody>
             <Listbox aria-label={t('pages.main.catalog.link')} variant="flat">
-              <ListboxSection title={t('features.filter.categories')}>
+              <ListboxSection title={t('features.filter.categories')} className="mb-0">
                 {getAllCategories().map((category) => (
                   <ListboxItem href={`/catalog/${category.id}`} key={category.id}>
                     <div
@@ -79,7 +79,7 @@ export default function PageContent({ params }: LocaleParams & CategoryParams) {
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <Input
               type="search"
-              size="sm"
+              size="lg"
               placeholder={t('features.search.label')}
               aria-label={t('features.search.label')}
               startContent={<MagnifyingGlass aria-label={t('features.search.label')} size="20" />}

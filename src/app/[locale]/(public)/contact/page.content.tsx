@@ -110,7 +110,7 @@ export default function PageContent() {
       </Card>
 
       <Card className="w-full">
-        <CardBody>
+        <CardBody className="p-4">
           <ContactForm />
         </CardBody>
       </Card>
