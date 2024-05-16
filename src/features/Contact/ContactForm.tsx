@@ -106,10 +106,13 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
     // }
   }, [dispatch, formErrors, formState, formState?.type, handleClose])
 
+  // shared class names
+  const className = useMemo(() => clsx('flex flex-col gap-4', handleClose && 'pb-4'), [handleClose])
+
   // handle "thank-you" view render
   if (view === 'thank-you') {
     return (
-      <div className="flex flex-col gap-4">
+      <div className={className}>
         <p>{t('contact.formSentSuccessfully')}</p>
         <Button color="primary" onClick={handleThankYouClick}>
           {t('menu.done')}
@@ -119,7 +122,7 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
   }
 
   return (
-    <form className="flex flex-col gap-4" action={formAction}>
+    <form className={className} action={formAction}>
       {product && (
         <>
           <Input isRequired type="hidden" className="hidden" name="productId" value={product.id} />
@@ -260,7 +263,7 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
       <SubmitButton />
 
       {handleClose && (
-        <Button className="mb-4" type="reset" onClick={handleClose}>
+        <Button type="reset" onClick={handleClose}>
           {t('menu.cancel')}
         </Button>
       )}
