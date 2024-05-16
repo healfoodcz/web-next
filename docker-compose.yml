@@ -1,11 +1,11 @@
 version: '3.7'
 
 services:
-  next-app:
+  web-next:
     build:
       context: ./
       dockerfile: ./dockerfile
-    container_name: healfoodcz-web-next
+    container_name: web-next
     restart: always
     networks:
       - my-network
