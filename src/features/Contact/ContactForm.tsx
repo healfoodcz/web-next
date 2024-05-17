@@ -45,6 +45,7 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
   const [formState, formAction] = useFormState(submitContactForm, null)
   const formErrors = useMemo(() => {
     if (!formState || formState.type !== FormStateType.FAILED) return null
+
     const mappedFormErrors: Record<string, string> = {}
 
     Object.entries(formState.errors).forEach(([key, value]) => {
