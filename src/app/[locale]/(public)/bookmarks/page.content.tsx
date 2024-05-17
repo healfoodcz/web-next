@@ -36,7 +36,7 @@ export default function PageContent({ params }: LocaleParams) {
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <Input
             type="search"
-            size="sm"
+            size="lg"
             placeholder={t('features.search.label')}
             aria-label={t('features.search.label')}
             startContent={<MagnifyingGlass aria-label={t('features.search.label')} size="20" />}

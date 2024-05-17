@@ -9,6 +9,7 @@ Marks:
 
 # (M) Refactor to keep features in the right directory
   - at `src/app/[locale]/(public)/catalog/[category]/[product]/page.content.tsx`
+  - at `src/app/[locale]/(public)/bookmarks/page.content.tsx`
 
 ## (L) Server side logger
 
