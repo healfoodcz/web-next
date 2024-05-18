@@ -7,7 +7,9 @@ Marks:
 - (M) - medium priority
 - (L) - low priority
 
-# (M) Refactor to keep features in the right directory
+## (H) Fix <ContactForm /> not submitting after invalid field edit to correct format
+
+## (M) Refactor to keep features in the right directory
   - at `src/app/[locale]/(public)/catalog/[category]/[product]/page.content.tsx`
   - at `src/app/[locale]/(public)/bookmarks/page.content.tsx`
 
