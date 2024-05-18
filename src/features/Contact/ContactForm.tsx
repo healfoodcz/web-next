@@ -1,8 +1,8 @@
 import { Input, Textarea, Checkbox, Button, Tabs, Tab, Link } from '@nextui-org/react'
 import { useTranslations, useLocale } from 'next-intl'
 import { useFormState, useFormStatus } from 'react-dom'
-import { Product } from '@/features/Product'
 import { useEffect, useMemo, useState } from 'react'
+import { Product } from '@/features/Product'
 import { FormStateType } from '@/features/Form'
 import { useAppSelector, useAppDispatch } from '@/features/Store'
 import clsx from 'clsx'
@@ -141,23 +141,39 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
         selectedKey={tabsKey}
         onSelectionChange={(key) => setTabsKey(key.toString())}
       >
-        <Tab key="legalEntity" title={t('contact.legalEntity')}>
-          <Input isRequired type="hidden" className="hidden" name="userType" value="legalEntity" />
-          <Input
-            isRequired={false}
-            type="text"
-            name="companyName"
-            label={t('contact.companyName')}
-            defaultValue={contact.companyName}
-            isInvalid={Boolean(formErrors && formErrors?.companyName && formErrors.companyName.length > 0)}
-            errorMessage={formErrors ? formErrors?.companyName && formErrors.companyName : ''}
-          />
-        </Tab>
-        <Tab key="individual" title={t('contact.individual')}>
-          <Input isRequired type="hidden" className="hidden" name="companyName" value="" />
-          <Input isRequired type="hidden" className="hidden" name="userType" value="individual" />
-        </Tab>
+        <Tab key="legalEntity" title={t('contact.legalEntity')} />
+        <Tab key="individual" title={t('contact.individual')} />
       </Tabs>
+
+      <Input isRequired type="hidden" className="hidden" name="userType" value={tabsKey} />
+
+      <Input isRequired type="hidden" className="hidden" name="companyName" value="" />
+
+      <Input
+        isRequired={false} // let the zod check it in the action logic
+        type="text"
+        name="companyName"
+        label={t('contact.companyName')}
+        defaultValue={contact.companyName}
+        isInvalid={Boolean(formErrors && formErrors?.companyName && formErrors.companyName.length > 0)}
+        errorMessage={formErrors ? formErrors?.companyName && formErrors.companyName : ''}
+        classNames={{
+          label: tabsKey === 'legalEntity' ? 'max-h-[20px]' : 'max-h-0',
+        }}
+        className={clsx(
+          // eslint-disable-next-line no-nested-ternary
+          tabsKey === 'legalEntity'
+            ? // shown
+              formErrors && formErrors?.companyName && formErrors.companyName.length > 0
+              ? // ... and has error label below
+                'opacity-100 max-h-[80px] mt-0 mb-0'
+              : // ... and doesn't have error label below
+                'opacity-100 max-h-[56px] mt-0 mb-0'
+            : // hidden
+              'opacity-0 max-h-0 -mt-2 -mb-2',
+          'overflow-hidden transition-all ease-[cubic-bezier(.47,1.83,.68,.99)] duration-500 ',
+        )}
+      />
 
       <Input
         isRequired={false}
@@ -167,7 +183,6 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
         defaultValue={contact.fullName}
         isInvalid={Boolean(formErrors && formErrors?.fullName && formErrors.fullName.length > 0)}
         errorMessage={formErrors ? formErrors?.fullName && formErrors.fullName : ''}
-        className={tabsKey === 'individual' ? '-mt-4' : ''}
       />
 
       <Input
