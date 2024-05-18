@@ -103,6 +103,7 @@ function phoneValidator(value: string) {
 }
 
 export const textareaMaxLength = 2000
+const textareaMaxLengthExtended = textareaMaxLength * 1.15
 
 export const contactFormSchema = z
   .object({
@@ -117,7 +118,8 @@ export const contactFormSchema = z
     phone: z.string(missing).trim().min(1, FieldError.EMPTY).refine(phoneValidator, wrongFormat),
     hasTelegram: z.boolean(missing),
     hasWhatsApp: z.boolean(missing),
-    message: z.string().trim().max(textareaMaxLength, FieldError.TOO_LONG).nullable(),
+    // can be a bit longer, actual limit of the FINAL message according to Telegram Bot API Docs is 5k chars
+    message: z.string().trim().max(textareaMaxLengthExtended, FieldError.TOO_LONG).nullable(),
     save: z.boolean(missing),
     agreeWithPrivacyPolicy: z.boolean().refine((val) => val, mustBeChecked),
   })

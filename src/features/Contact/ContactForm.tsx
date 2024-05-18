@@ -1,7 +1,7 @@
 import { Input, Textarea, Checkbox, Button, Tabs, Tab, Link } from '@nextui-org/react'
 import { useTranslations, useLocale } from 'next-intl'
 import { useFormState, useFormStatus } from 'react-dom'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState, useCallback } from 'react'
 import { Product } from '@/features/Product'
 import { FormStateType } from '@/features/Form'
 import { useAppSelector, useAppDispatch } from '@/features/Store'
@@ -36,13 +36,10 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
   const dispatch = useAppDispatch()
 
   // tabs
-  const [tabsKey, setTabsKey] = useState(contact.userType)
+  const [userType, setUserType] = useState(contact.userType)
 
   // textarea length description
   const [textareaValue, setTextareaValue] = useState(contact.message)
-
-  // checkbox - privacy policy
-  const [isPrivacyPolicyAccepted, setIsPrivacyPolicyAccepted] = useState(contact.agreeWithPrivacyPolicy)
 
   // form
   const [formState, formAction] = useFormState(submitContactForm, null)
@@ -77,6 +74,14 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
 
     return mappedFormErrors
   }, [formState, t])
+  const getFieldValidator = useCallback(
+    (fieldName: string) => () => {
+      if (!formErrors || !(fieldName in formErrors)) return true
+
+      return formErrors[fieldName]
+    },
+    [formErrors],
+  )
 
   // form view - the form itself or the "thank-you" view
   const [view, setView] = useState<'form' | 'thank-you'>('form')
@@ -91,32 +96,20 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
 
   // redux effect
   useEffect(() => {
-    if (formState === null || formState.type === FormStateType.FAILED) {
-      // console.debug(formErrors)
-      return
-    }
+    if (!formState || formState.type === FormStateType.FAILED) return
 
     setView('thank-you')
+    dispatch(formState.data?.save ? populate(formState.data) : wipe(undefined))
+  }, [dispatch, formState, formState?.type, handleClose])
 
-    if (formState.data?.save) {
-      dispatch(populate(formState.data))
-    } else {
-      dispatch(wipe(undefined))
-    }
-
-    // update: don't close since there is "thank-you" view that will handle this
-    // if (handleClose) {
-    //   handleClose()
-    // }
-  }, [dispatch, formErrors, formState, formState?.type, handleClose])
-
-  // shared class names
-  const className = useMemo(() => clsx('flex flex-col gap-4', handleClose && 'pb-4'), [handleClose])
+  // shared class names, props, ...
+  const wrapperClassName = useMemo(() => clsx('flex flex-col gap-4', handleClose && 'pb-4'), [handleClose])
+  const hiddenInputProps = useMemo(() => ({ isRequired: true, type: 'hidden', className: 'hidden' }), [])
 
   // handle "thank-you" view render
   if (view === 'thank-you') {
     return (
-      <div className={className}>
+      <div className={wrapperClassName}>
         <p>{t('contact.formSentSuccessfully')}</p>
         <Button color="primary" onClick={handleThankYouClick}>
           {t('menu.done')}
@@ -126,87 +119,74 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
   }
 
   return (
-    <form className={className} action={formAction}>
-      {product && (
-        <>
-          <Input isRequired type="hidden" className="hidden" name="productId" value={product.id} />
-          <Input isRequired type="hidden" className="hidden" name="productTitle" value={product.title.ru} />
-        </>
-      )}
-
-      <Input isRequired type="hidden" className="hidden" name="url" value={window.location.toString()} />
-      <Input isRequired type="hidden" className="hidden" name="locale" value={locale} />
-
+    <form className={wrapperClassName} action={formAction}>
       <Tabs
-        classNames={{ panel: 'p-0' }}
         aria-label={`${t('contact.legalEntity')}/${t('contact.individual')}}`}
         fullWidth
-        selectedKey={tabsKey}
-        onSelectionChange={(key) => setTabsKey(key.toString())}
+        selectedKey={userType}
+        onSelectionChange={(key) => setUserType(key.toString())}
       >
         <Tab key="legalEntity" title={t('contact.legalEntity')} />
         <Tab key="individual" title={t('contact.individual')} />
       </Tabs>
 
-      <Input isRequired type="hidden" className="hidden" name="userType" value={tabsKey} />
-
-      <Input isRequired type="hidden" className="hidden" name="companyName" value="" />
+      <Input {...hiddenInputProps} name="productId" value={product?.id} />
+      <Input {...hiddenInputProps} name="productTitle" value={product?.title.ru} />
+      <Input {...hiddenInputProps} name="url" value={window.location.toString()} />
+      <Input {...hiddenInputProps} name="locale" value={locale} />
+      <Input {...hiddenInputProps} name="userType" value={userType} />
 
       <Input
-        isRequired={false} // let the zod check it in the action logic
+        isRequired={userType === 'legalEntity'}
         type="text"
         name="companyName"
         label={t('contact.companyName')}
         defaultValue={contact.companyName}
-        isInvalid={Boolean(formErrors && formErrors?.companyName && formErrors.companyName.length > 0)}
-        errorMessage={formErrors ? formErrors?.companyName && formErrors.companyName : ''}
+        validate={getFieldValidator('companyName')}
         classNames={{
-          label: tabsKey === 'legalEntity' ? 'max-h-[20px]' : 'max-h-0',
+          label: clsx(userType === 'legalEntity' ? 'max-h-[20px]' : 'max-h-0', 'transition-all'),
         }}
         className={clsx(
           // eslint-disable-next-line no-nested-ternary
-          tabsKey === 'legalEntity'
+          userType === 'legalEntity'
             ? // shown
-              formErrors && formErrors?.companyName && formErrors.companyName.length > 0
+              !formErrors || 'companyName' in formErrors
               ? // ... and has error label below
                 'opacity-100 max-h-[80px] mt-0 mb-0'
               : // ... and doesn't have error label below
                 'opacity-100 max-h-[56px] mt-0 mb-0'
             : // hidden
               'opacity-0 max-h-0 -mt-2 -mb-2',
-          'overflow-hidden transition-all ease-[cubic-bezier(.47,1.83,.68,.99)] duration-500 ',
+          'transition-all ease-[cubic-bezier(.47,1.83,.68,.99)] duration-500 ',
         )}
       />
 
       <Input
-        isRequired={false}
+        isRequired
         type="text"
         name="fullName"
         label={t('contact.fullName')}
         defaultValue={contact.fullName}
-        isInvalid={Boolean(formErrors && formErrors?.fullName && formErrors.fullName.length > 0)}
-        errorMessage={formErrors ? formErrors?.fullName && formErrors.fullName : ''}
+        validate={getFieldValidator('fullName')}
       />
 
       <Input
-        isRequired={false}
+        isRequired
         type="email"
         name="email"
         label={t('contact.email')}
         defaultValue={contact.email}
-        isInvalid={Boolean(formErrors && formErrors?.email && formErrors.email.length > 0)}
-        errorMessage={formErrors ? formErrors?.email && formErrors.email : ''}
+        validate={getFieldValidator('email')}
       />
 
       <Input
-        isRequired={false}
+        isRequired
         type="tel"
         name="phone"
         label={t('contact.phone')}
         description={t('contact.phoneDescription')}
         defaultValue={contact.phone}
-        isInvalid={Boolean(formErrors && formErrors?.phone && formErrors.phone.length > 0)}
-        errorMessage={formErrors ? formErrors?.phone && formErrors.phone : ''}
+        validate={getFieldValidator('phone')}
       />
 
       <Checkbox name="hasTelegram" defaultSelected={contact.hasTelegram}>
@@ -227,12 +207,13 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
           maxRows={10}
           value={textareaValue}
           onValueChange={setTextareaValue}
-          isInvalid={Boolean(formErrors && formErrors?.message && formErrors.message.length > 0)}
+          isInvalid={textareaValue.length > textareaMaxLength}
         />
 
-        {/* instead of text area's errorMessage because two custom columns */}
         <div className="flex flex-row justify-between text-tiny p-1 gap-1.5">
-          <p className="text-danger">{formErrors ? formErrors?.message && formErrors.message : ''}</p>
+          <p className="text-danger">
+            {textareaValue.length > textareaMaxLength ? t('error.fieldTooLong') : ''}
+          </p>
 
           <p className={clsx('opacity-70', textareaValue.length > textareaMaxLength ? 'text-danger' : '')}>
             {textareaValue.length}/{textareaMaxLength}
@@ -252,10 +233,7 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
         <Checkbox
           name="agreeWithPrivacyPolicy"
           defaultSelected={contact.agreeWithPrivacyPolicy}
-          required
-          isSelected={isPrivacyPolicyAccepted}
-          onValueChange={setIsPrivacyPolicyAccepted}
-          isInvalid={!isPrivacyPolicyAccepted}
+          validate={getFieldValidator('agreeWithPrivacyPolicy')}
         >
           {t.rich('documents.iAgreeWithPrivacyPolicy', {
             l: (chunks: any) => (
@@ -267,7 +245,7 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
         </Checkbox>
 
         {/* errorMessage prop that is missing on <Checkbox /> */}
-        <p className="text-tiny p-1 text-danger">{isPrivacyPolicyAccepted ? '' : t('error.mustBeChecked')}</p>
+        <p className="text-tiny p-1 text-danger">{getFieldValidator('agreeWithPrivacyPolicy')()}</p>
       </div>
 
       {formErrors &&
