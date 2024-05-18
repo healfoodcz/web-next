@@ -41,6 +41,9 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
   // textarea length description
   const [textareaValue, setTextareaValue] = useState(contact.message)
 
+  // checkbox - privacy policy
+  const [isPrivacyPolicyAccepted, setIsPrivacyPolicyAccepted] = useState(contact.agreeWithPrivacyPolicy)
+
   // form
   const [formState, formAction] = useFormState(submitContactForm, null)
   const formErrors = useMemo(() => {
@@ -250,9 +253,9 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
           name="agreeWithPrivacyPolicy"
           defaultSelected={contact.agreeWithPrivacyPolicy}
           required
-          isInvalid={Boolean(
-            formErrors && formErrors?.agreeWithPrivacyPolicy && formErrors.agreeWithPrivacyPolicy.length > 0,
-          )}
+          isSelected={isPrivacyPolicyAccepted}
+          onValueChange={setIsPrivacyPolicyAccepted}
+          isInvalid={!isPrivacyPolicyAccepted}
         >
           {t.rich('documents.iAgreeWithPrivacyPolicy', {
             l: (chunks: any) => (
@@ -264,9 +267,7 @@ export default function ContactForm({ handleClose, product }: ContactFormProps) 
         </Checkbox>
 
         {/* errorMessage prop that is missing on <Checkbox /> */}
-        <p className="text-tiny p-1 text-danger">
-          {formErrors ? formErrors?.agreeWithPrivacyPolicy && formErrors.agreeWithPrivacyPolicy : ''}
-        </p>
+        <p className="text-tiny p-1 text-danger">{isPrivacyPolicyAccepted ? '' : t('error.mustBeChecked')}</p>
       </div>
 
       {formErrors &&
