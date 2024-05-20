@@ -10,7 +10,7 @@
 
 Owned by [**healfoodcz**](https://github.com/healfoodcz)
 
-Developed by [**RamoFX**](https://github.com/ramofx)
+Developed by [**ramofx**](https://github.com/ramofx)
 
 Demonstration available on [**preview.healfood.cz**](https://preview.healfood.cz/en)
 
