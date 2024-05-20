@@ -9,3 +9,6 @@ cd "../"
 
 # compose the container
 docker-compose --project-name healfoodcz down --remove-orphans
+
+# clear unused images
+docker image prune -f

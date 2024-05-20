@@ -1,0 +1,33 @@
+#!/usr/bin/env sh
+
+# go to project root
+cd "$( cd "$(dirname "$0")" ; pwd -P )"
+cd "../"
+
+# load .env file
+if [ -f .env ]; then
+    set -o allexport
+    . ./.env
+    set +o allexport
+fi
+
+# prepare tag, format is YEAR-MONTH-DAY_HOUR-MINUTE-SECOND
+tag=$(date +'%Y-%m-%d_%H-%M-%S')
+
+# deps, build, image
+npm install
+npm run build
+docker build -t "$DOCKER_REPOSITORY:$tag" .
+
+# login hub.docker.com
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
+# push tagged as datetime
+docker push "$DOCKER_REPOSITORY:$tag"
+
+# push tagged as latest
+docker tag "$DOCKER_REPOSITORY:$tag" "$DOCKER_REPOSITORY:latest"
+docker push "$DOCKER_REPOSITORY:latest"
+
+# logout hub.docker.com
+docker logout
