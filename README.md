@@ -1,28 +1,43 @@
-# healfood.cz
+# [healfoodcz/web-next](https://preview.healfood.cz/en)
 
-A web application written for HEALFOOD CZ s.r.o. company.
+**README** [**TODO**](./TODO.md)
 
-> TODO: web app preview (mini gallery?)
+---
 
-## Software prerequisites
+> <kbd>Web application</kbd> <kbd>Next.js</kbd>
 
-- Docker
+<!-- ![Visual demonstration]() -->
 
-or
+Owned by [**healfoodcz**](https://github.com/healfoodcz)
 
-- Node.js
-- NPM
+Developed by [**RamoFX**](https://github.com/ramofx)
 
-## Start (production)
+Demonstration available on [**preview.healfood.cz**](https://preview.healfood.cz/en)
 
-- If using Docker, then `./cli/up`
+## How to get started
 
-otherwise
+Get on [**GitHub**](https://github.com/healfoodcz/web-next) or clone using command
+`git clone https://github.com/healfoodcz/web-next`
 
-- `npm install`
-- `npm run start:prod`
+**Software prerequisites:**
 
-## Develop
+- [**Docker**](https://www.docker.com/)  (recommended)
+- or
+- [**Node.js**](https://nodejs.org/en) and [**NPM**](https://www.npmjs.com/)
 
-- `npm install`
-- `npm run start:dev`
+**Starting in production mode:**
+
+| Using Docker (recommended) | Using Node.js and NPM                      |
+|----------------------------|--------------------------------------------|
+| 1. Start `./cli/up`        | 1. Install `npm install`                   |
+| 2. Stop `./cli/down`       | 2. Build `npm run build`                   |
+|                            | 3. Start `npm start`, `npm run start:prod` |
+|                            | 4. Stop <kbd>Ctrl</kbd>+<kbd>C</kbd>       |
+
+**Develop:**
+
+| Using Node.js and NPM                |
+|--------------------------------------|
+| 1. Install `npm install`             |
+| 2. Start `npm run start:dev`         |
+| 3. Stop <kbd>Ctrl</kbd>+<kbd>C</kbd> |
