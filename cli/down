@@ -7,8 +7,9 @@ set -e
 cd "$( cd "$(dirname "$0")" ; pwd -P )"
 cd "../"
 
-# compose the container
-docker-compose --project-name healfoodcz down --remove-orphans
+# stop and remove the container
+docker stop web-next
+docker rm web-next
 
 # clear unused images
 docker image prune -f
