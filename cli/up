@@ -11,14 +11,17 @@ if [ -f .env ]; then
     set +o allexport
 fi
 
-# make sure previous container is down
+# make sure the previous container is down
 ./cli/down
 
 # login hub.docker.com
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
-# compose the container
-docker-compose --project-name healfoodcz up --detach --build
+# make sure the image is up to date
+docker pull "$DOCKER_REPOSITORY"
+
+# run the container
+docker run --detach --restart always --network my-network --name web-next "$DOCKER_REPOSITORY:latest"
 
 # logout hub.docker.com
 docker logout

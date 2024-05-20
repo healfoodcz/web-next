@@ -1,32 +1,24 @@
-### NextJS template
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# next.js
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
+.git
+.idea
+#.next
+cli
+node_modules
+public
+src
+bun.lockb
+.env
+.env.example
+.eslintrc.json
+.gitignore
+.dockerignore
+postcss.config.js
+next.config.mjs
+tailwind.config.ts
+global.d.ts
 next-env.d.ts
-
+#package.json
+#package-lock.json
+.prettierrc.json
+tsconfig.json
+README.md
+TODO.md
