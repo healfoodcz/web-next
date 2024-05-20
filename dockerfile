@@ -11,16 +11,11 @@ FROM base AS dependencies
 # configure npm to disable update notifier
 RUN npm config set update-notifier false
 # install dependencies
-RUN npm install
-
-#FROM dependencies as env
-#ENV NEXT_TELEMETRY_DISABLED=1
+RUN npm install --omit=dev
 
 FROM dependencies AS build
-# copy the app source code to the container
-COPY . .
-# build next app
-RUN npm run build
+ENV NEXT_TELEMETRY_DISABLED=1
+COPY .next .
 
 FROM build AS run
 # start the app

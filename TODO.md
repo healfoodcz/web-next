@@ -9,14 +9,9 @@
 Priority and sorting system: <kbd>HIGH</kbd>, <kbd>MEDIUM</kbd>, <kbd>LOW</kbd>
 
 - <kbd>HIGH</kbd> Simplify deployment
-  - Create private image on [hub.docker.com](https://hub.docker.com/repository/docker/healfoodcz/)
-  - In [dockerfile](./dockerfile), simplify to: `COPY package*.json .next .env`
-    (comes from developer's `npm build`), then `RUN npm i `, and `CMD [ "npm", "start" ]`
-  - Add a cli script: [deploy](./cli/deploy) (image deployment)
-  - Refactor the cli script: [up](./cli/up) (pulling an image from hub.docker.com)
-  - GitHub actions (?) for creating container images automatically?
-  - GitHub actions (?) for pulling the newest version from GitHub?
-  - Refactor the cli script: [down](./cli/down) (remove image afterward)
+  - automatically update docker image (healfoodcz/web-next) when master branch gets new commit
+    - command `./cli/push`
+  - make deployment machine to detect new image and re-run `./cli/up` (how?)
 - <kbd>HIGH</kbd> ? Use GitHub secrets for .env
   - If so, then how to manage GitHub credentials securely? (probably SSH copy)
 - <kbd>HIGH</kbd> Eliminate the initial redirect from /en -> /en/catalog

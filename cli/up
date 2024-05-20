@@ -4,8 +4,21 @@
 cd "$( cd "$(dirname "$0")" ; pwd -P )"
 cd "../"
 
+# load .env file
+if [ -f .env ]; then
+    set -o allexport
+    . ./.env
+    set +o allexport
+fi
+
 # make sure previous container is down
 ./cli/down
 
+# login hub.docker.com
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
 # compose the container
 docker-compose --project-name healfoodcz up --detach --build
+
+# logout hub.docker.com
+docker logout
